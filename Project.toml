@@ -1,0 +1,12 @@
+name = "ClarabelDocs"
+uuid = "5bffead5-e986-4d40-a894-38d9eb53c10f"
+authors = ["Paul Goulart <paul.goulart@eng.ox.ac.uk>"]
+version = "0.1.2"
+
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+DocumenterTools = "35a29f4d-8980-5a13-9543-d66fff28ecb8"
+
+[compat]
+Documenter = "0.27.9"
+julia = "1.6"
