@@ -1,4 +1,4 @@
-# API Reference
+# Julia API Reference
 
 ## [Solver and main API](@id api-solver)
 

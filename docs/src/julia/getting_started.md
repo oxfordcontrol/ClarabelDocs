@@ -1,6 +1,9 @@
 # Getting Started
 
-This guide describes the process of creating a Clarabel.jl model, populating its settings and problem data, solving the problem and obtaining and understanding results.  The description here relates to Clarabel's native API.  If you want to use `JuMP` or `Convex.jl` to model your  problem instead, see the [JuMP Interface](@ref) and [Convex.jl Interface](@ref) sections.
+This guide describes the process of creating a Clarabel.jl model, populating its settings and problem data, solving the problem and obtaining and understanding results.  The description here relates to Clarabel's native API.  
+
+
+* __JuMP / Convex.jl support__: We provide an interface to [MathOptInterface](https://jump.dev/JuMP.jl/stable/moi/) (MOI), which allows you to describe your problem in [JuMP](https://github.com/JuliaOpt/JuMP.jl) and [Convex.jl](https://github.com/JuliaOpt/Convex.jl).  If you want to use `JuMP` or `Convex.jl` to model your  problem instead, see the [JuMP Interface](@ref) and [Convex.jl Interface](@ref) sections.
 
 Clarabel.jl solves optimisation problems in the format:
 ```math

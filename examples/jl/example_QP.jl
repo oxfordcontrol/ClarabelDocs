@@ -1,20 +1,12 @@
 #=
-# Basic QP Example
+# Basic QP Example in Julia
 
-Suppose that we want to solve the following 2-dimensional quadratic programming problem:
-
-$$
-\begin{array}{ll} \text{minimize} &  3x_1^2 + 2x_2^2 - x_1 - 4x_2\\
-\text{subject to} &  -1 \leq x \leq 1, ~ x_1 = 2x_2
-\end{array}
-$$
-
-In this example we will see how to solve this problem both natively in Clarabel.jl
+We will show how to solve the Basic QP example problem both natively in Clarabel.jl
 and also by solving with Clarabel.jl within either JuMP or Convex.jl.
 
 ## Clarabel.jl native interface
 
-To solve the problem directly within Clarabel.jl, we start by creating the solver and settings:
+To solve the problem directly within Clarabel.jl, start by creating the solver and settings:
 =#
 
 using Clarabel, LinearAlgebra, SparseArrays
@@ -23,29 +15,18 @@ settings = Clarabel.Settings(verbose = true)
 solver   = Clarabel.Solver()
 
 #=
-### Objective function data
 
-We next put the objective function into the standard Clarabel.jl form $\frac{1}{2}x^\top P x + q^\top x$.
-Define the objective function data as
-$P = 2 \cdot \begin{bmatrix} 3 & 0 \\ 0 & 2\end{bmatrix}$ and
-$q = \begin{bmatrix} -1 \\ -4\end{bmatrix}$.
+### Problem data
+
+Next define the data for the objective function and the constraints:
+
 =#
 
 P = sparse([3. 0.;0. 2.].*2)
 q = [-1., -4.]
 nothing  #hide
 
-#=
-### Constraint data
-
-Finally we put the constraints into the standard Clarabel.jl form $Ax + s = b$, where $s \in \mathcal{K}$ for some
-composite cone $\mathcal{K}$.   We have 1 equality constraint and 6 inequalities, so we require the first element of $s$
-to be zero (i.e. the first constraint will correspond to the equality) and all other elements $s_i \ge 0$.   Our
-condition on $s$ is therefore $s \in K = \{0\}^1 \times \mathbb{R}^4_{\ge 0}.$ Define the constraint data as $A =
-\footnotesize\begin{bmatrix*}[r] 1 & -2 \\ 1 & 0 \\ 0 & 1 \\ -1 & 0 \\ 0 & -1\end{bmatrix*}$ and $b=
-\footnotesize\begin{bmatrix} 0 \\ 1 \\ 1 \\ 1 \\ 1 \end{bmatrix}$.
-
-=#
+#
 
 A = sparse([1. -2.;    #<-- LHS of equality constraint
             1.  0.;    #<-- LHS of inequality constraint (upper bound)
@@ -65,12 +46,18 @@ cones =
 
 nothing  #hide
 
-# Finally we can populate the solver with problem data and solve
+#=
+
+### Running the solver
+
+Finally, populate the solver with the problem data and solve:
+
+=#
 
 Clarabel.setup!(solver, P, q, A, b, cones, settings)
 result = Clarabel.solve!(solver)
 
-# then retrieve our solution
+# then retrieve the solution:
 
 result.x
 
@@ -80,8 +67,7 @@ result.x
     in `cones` as long as it is compatible with the ordering of
     the constraints as they appear in `A` and `b`.   There is also no
     constraint on the number of instances of each type that appear.
-    You could, for example, define the inequalities in the above example
-    using
+    You could, for example, define the inequalities in the above example using:
 
 
     ```julia

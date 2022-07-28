@@ -1,21 +1,12 @@
 #=
-# Basic SOCP Example
+# Basic SOCP Example in Julia
 
-Suppose that we want to solve the following 2-dimensional optimization problem:
-
-$$
-\begin{array}{ll} \text{minimize} & x_2^2\\[2ex]
-\text{subject to} &  \left\|\begin{pmatrix} 2x_1 \\ x_2 \end{pmatrix}
-- \begin{pmatrix} 2 \\ 2 \end{pmatrix}\right\|_2 \le 1
-\end{array}
-$$
-
-In this example we will see how to solve this problem both natively in Clarabel.jl
+We will show how to solve this problem both natively in Clarabel.jl
 and also by solving with Clarabel.jl within JuMP.
 
 ## Clarabel.jl native interface
 
-To solve the problem directly within Clarabel.jl, we start by creating the solver and settings:
+To solve the problem directly within Clarabel.jl, start by creating the solver and settings:
 =#
 
 using Clarabel, LinearAlgebra, SparseArrays
@@ -26,27 +17,14 @@ solver   = Clarabel.Solver()
 #=
 ### Objective function data
 
-We next put the objective function into the standard Clarabel.jl form $\frac{1}{2}x^\top P x + q\top x$.
-Define the objective function data as
+Next define the data for the objective function and the constraints:
 =#
 
 P = sparse([0. 0.;0. 1.].*2)
 q = [0., 0.]
 nothing  #hide
 
-#=
-### Constraint data
-
-Finally we put the constraints into the standard Clarabel.jl form $Ax + s = b$, where $s \in \mathcal{K}$ for some  cone
-$\mathcal{K}$.  We have a single constraint on the 2-norm of a vector, so we rewrite
-$$
-\left\|\begin{pmatrix} 2x_1 \\ x_2 \end{pmatrix} - \begin{pmatrix} 2 \\ 2 \end{pmatrix}\right\|_2 \le 1
-\quad \Longleftrightarrow \quad
-\begin{pmatrix} 1 \\ 2x_1 - 2\\ x_2 - 2 \end{pmatrix} \in \mathcal{K}_{SOC}
-$$
-which puts our constraint in the form $b - Ax \in \mathcal{K}_{SOC}$.  We therefore
-define the constraint data as
-=#
+#
 
 A = sparse([0.  0.
            -2.  0.;
@@ -60,12 +38,12 @@ cones = [Clarabel.SecondOrderConeT(3)]
 nothing  #hide
 
 
-# Finally we can populate the solver with problem data and solve
+# Finally populate the solver with problem data and solve:
 
 Clarabel.setup!(solver, P, q, A, b, cones, settings)
 result = Clarabel.solve!(solver)
 
-# then retrieve our solution
+# then retrieve the solution:
 
 result.x
 

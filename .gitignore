@@ -5,7 +5,6 @@
 # doc gen files
 /docs/build
 /docs/src/literate/build/
-/docs/src/examples/*.md
 
 # Pkg generated files
 Manifest.toml
