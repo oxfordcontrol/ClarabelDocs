@@ -11,11 +11,6 @@ function postprocess(cont)
       cont
 end
 
-# function postprocess(cont)
-#     # no-op / does not postprocess Literate markddown files
-#     cont
-# end
-
 # force execution of some examples so that
 # their timing in the docs represent execution time,
 # not compilation time
@@ -28,7 +23,7 @@ include(joinpath(@__DIR__, "./src/literate/", "convex_jl.jl"))
 redirect_stdout(oldstream)
 
 
-# find all example source files
+# find all Julia example source files
 exclude_files = String[];
 example_path = joinpath(@__DIR__, "../examples/jl/")
 build_path =  joinpath(@__DIR__, "src", "examples/jl/")
@@ -40,7 +35,6 @@ for file in files
       Literate.markdown(example_path * file, build_path; preprocess = fix_math_md, postprocess = postprocess, documenter = true, credit = true)
 end
 
-examples_julia = fix_suffix.("./examples/jl/" .* files)
 
 # find all other documentation source files that are built with Literate
 example_path = joinpath(@__DIR__, "src", "literate/")
@@ -48,5 +42,5 @@ build_path =  joinpath(@__DIR__, "src", "literate", "build/")
 files = readdir(example_path)
 filter!(x -> endswith(x, ".jl"), files)
 for file in files
-      Literate.markdown(example_path * file, build_path; preprocess = fix_math_md, postprocess = Nothing, documenter = true, credit = true)
+      Literate.markdown(example_path * file, build_path; preprocess = fix_math_md, documenter = true, credit = true)
 end
