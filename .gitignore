@@ -1,6 +1,7 @@
 
 # local files / testing
 .DS_Store*
+.vscode
 
 # doc gen files
 /docs/build

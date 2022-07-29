@@ -1,10 +1,10 @@
 [package]
-name = "Clarabel_QP_Example"
+name = "Clarabel_Intro_Example"
 version = "0.0.0"
 authors = ["Paul Goulart <paul.goulart@eng.ox.ac.uk>"]
 edition = "2021"
 license = "Apache-2.0"
-description = "Clarabel Conic Interior Point Solver : QP Example"
+description = "Clarabel Conic Interior Point Solver : Introductory Example"
 
 [dependencies]
 clarabel = {version = "0", path = "/Users/pgoulart/projects/clarabel/rust"}

@@ -17,24 +17,28 @@ pages = [
       "Home" => "index.md",
       "User Guides" => Any[
           "Julia" =>  Any[
-                "Installation" => "julia/installation.md",
-                "Getting Started" => "julia/getting_started.md",
+                "Installation" => "julia/installation_jl.md",
+                "Getting Started" => "julia/getting_started_jl.md",
                 "JuMP Interface" => "julia/jump.md",
                 "Convex.jl Interface" => "./literate/build/convex_jl.md",
                 "Arbitrary Precision Arithmetic" => "./literate/build/arbitrary_precision.md",
                 "Linear Solvers" => "julia/linear_solvers.md",
           ],
           "Rust" =>  Any[
-                "Getting Started" => "rust/getting_started.md",
+                "Installation" => "rust/installation_rs.md",
+                "Getting Started" => "rust/getting_started_rs.md",
           ],
-          "Python" =>   "python/getting_started.md", #NB: one level only as a test
+          "Python" =>  Any[
+                "Installation" => "python/installation_py.md",
+                "Getting Started" => "python/getting_started_py.md",
+          ],
       ],
       #"Method" => "method.md",
       "Examples" => examples,
       "Citing Clarabel" => "citing.md",
       "Contributing" => "contributing.md",
       "API Reference" => Any[
-          "Julia API" => "api-jl.md"
-          "Rust API \u29C9" => "api-rs.md"
+          "Julia API" => "api_jl.md"
+          "Rust API \u29C9" => "api_rs.md"
     ]
   ]

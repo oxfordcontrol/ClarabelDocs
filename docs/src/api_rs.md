@@ -1,3 +1,5 @@
+### [Rust API Reference](@id api-ref-rust)
+
 ```@raw html
     <head>
         <title>Old Page</title>

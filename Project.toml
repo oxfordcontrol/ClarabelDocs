@@ -6,7 +6,8 @@ version = "0.1.2"
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 DocumenterTools = "35a29f4d-8980-5a13-9543-d66fff28ecb8"
+Markdown = "d6f4376e-aef5-505a-96c1-9c027394607a"
 
 [compat]
-Documenter = "0.27.9"
+Documenter = "0.27"
 julia = "1.6"

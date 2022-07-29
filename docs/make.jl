@@ -1,5 +1,10 @@
 using Documenter, Clarabel, Literate
 
+# a function for importing external code
+# snippets into markdown files
+
+include("md_include.jl")
+
 @info "Building example problems..."
 
 include("make_examples_julia.jl")
