@@ -5,7 +5,7 @@ This section describes the process of creating a Clarabel.jl model, populating i
 The first step is to bring the Clarabel solver and other required packages into scope in your code using:
 
 ```julia
-using Clarabel, SparseArrays
+using Clarabel, SparseArrays, LinearAlgebra
 ```
 
 The `SparseArrays` package from the Julia standard distribution defines the `SparseMatrixCSC` type for defining matrices in compressed sparse column format.  

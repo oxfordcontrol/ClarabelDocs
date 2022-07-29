@@ -1,7 +1,7 @@
 # This code implements the example in the Clarabel
 # "Getting Started" documentation
 
-using Clarabel, SparseArrays
+using Clarabel, SparseArrays, LinearAlgebra
 
 P = sparse([3. 1 -1; 0 4 2; 0 0 5])
 
