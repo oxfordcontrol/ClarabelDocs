@@ -91,13 +91,16 @@ Clarabel.jl expects to receive a vector of cone specifications.  For the above c
 cones = [Clarabel.ZeroConeT(1), Clarabel.NonnegativeConeT(2), SecondOrderConeT(3)]
 ```
 
+There is no constraint on the ordering of the cones that appear
+in `cones`, nor on the number of instances of each type that appear.
+
 !!! note
     The cones `cones' should be of type `Vector{Clarabel.SupportedCone}`, and your input vector `b` should be compatible with the sum of the cone dimensions.
 
 
-
 !!! note
     Note carefully the signs in the above example.   The inequality condition is ``A_{ineq} x \le b_{ineq}``, which is equivalent to ``A_{ineq} x + s = b_{ineq}`` with ``s \ge 0``, i.e. ``s`` in the Nonnegative cone.    The SOC condition is ``x \in \mathcal{K}_{SOC}``, or equivalently ``-x + s = 0`` with ``s \in \mathcal{K}_{SOC}``.
+
 
 
 ## Adding problem data

@@ -3,9 +3,13 @@
 .DS_Store*
 
 # doc gen files
-/docs/build
-/docs/src/literate/build/
+#/docs/build
+#/docs/src/literate/build/
 
 # Pkg generated files
 Manifest.toml
 /docs/Manifest.toml
+
+#Rust generated files
+Cargo.lock
+target

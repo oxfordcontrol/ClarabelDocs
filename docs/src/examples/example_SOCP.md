@@ -3,7 +3,7 @@
 Suppose that we want to solve the following 2-dimensional optimization problem:
 
 ```math
-\begin{array}{ll} \text{minimize} & \frac{1}{2}x_2^2\\[2ex]
+\begin{array}{ll} \text{minimize} & x_2^2\\[2ex]
 \text{subject to} &  \left\|\begin{pmatrix} 2x_1 \\ x_2 \end{pmatrix}
 - \begin{pmatrix} 2 \\ 2 \end{pmatrix}\right\|_2 \le 1
 \end{array}
@@ -18,7 +18,7 @@ The Clarabel solver's default configuration expects problem data in the form $\f
 We therefore define the objective function data as
 
 
-$$P = 0 \cdot \begin{bmatrix} 0 & 0 \\ 0 & 1\end{bmatrix}
+$$P = 2 \cdot \begin{bmatrix} 0 & 0 \\ 0 & 1\end{bmatrix}
 \textrm{~~~and~~~}
 q = \begin{bmatrix} 0 \\ 0\end{bmatrix}.$$
 

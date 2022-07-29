@@ -1,0 +1,10 @@
+[package]
+name = "Clarabel_SOCP_Example"
+version = "0.0.0"
+authors = ["Paul Goulart <paul.goulart@eng.ox.ac.uk>"]
+edition = "2021"
+license = "Apache-2.0"
+description = "Clarabel Conic Interior Point Solver : SOCP Example"
+
+[dependencies]
+clarabel = {version = "0.1", path = "/Users/pgoulart/projects/clarabel/rust"}

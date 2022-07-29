@@ -6,27 +6,13 @@ and also by solving with Clarabel.jl within either JuMP or Convex.jl.
 
 ## Clarabel.jl native interface
 
-To solve the problem directly within Clarabel.jl, start by creating the solver and settings:
 =#
 
-using Clarabel, LinearAlgebra, SparseArrays
-
-settings = Clarabel.Settings(verbose = true)
-solver   = Clarabel.Solver()
-
-#=
-
-### Problem data
-
-Next define the data for the objective function and the constraints:
-
-=#
+using Clarabel, SparseArrays
 
 P = sparse([3. 0.;0. 2.].*2)
-q = [-1., -4.]
-nothing  #hide
 
-#
+q = [-1., -4.]
 
 A = sparse([1. -2.;    #<-- LHS of equality constraint
             1.  0.;    #<-- LHS of inequality constraint (upper bound)
@@ -36,49 +22,28 @@ A = sparse([1. -2.;    #<-- LHS of equality constraint
             ])
 
 b = [0.;        #<-- RHS of equality constraint
-     ones(4)   #<-- RHS of inequality constraints
-    ]
+     ones(4)]   #<-- RHS of inequality constraints
 
 cones =
     [Clarabel.ZeroConeT(1),           #<--- for the equality constraint
      Clarabel.NonnegativeConeT(4)]    #<--- for the inequality constraints
 
+settings = Clarabel.Settings()
 
-nothing  #hide
-
-#=
-
-### Running the solver
-
-Finally, populate the solver with the problem data and solve:
-
-=#
+solver   = Clarabel.Solver()
 
 Clarabel.setup!(solver, P, q, A, b, cones, settings)
+
 result = Clarabel.solve!(solver)
 
-# then retrieve the solution:
+nothing #hide
+
+#
+result #hide
+
+#
 
 result.x
-
-#=
-!!! tip
-    There is no constraint on the ordering of the cones that appears
-    in `cones` as long as it is compatible with the ordering of
-    the constraints as they appear in `A` and `b`.   There is also no
-    constraint on the number of instances of each type that appear.
-    You could, for example, define the inequalities in the above example using:
-
-
-    ```julia
-    cones =
-        [Clarabel.ZeroConeT(1),           #<--- for the equality constraint
-         Clarabel.NonnegativeConeT(2),    #<--- first half of the inequality constraints
-         Clarabel.NonnegativeConeT(2)]    #<--- second half of the inequality constraints
-
-    and get the same result.
-=#
-
 
 # ## Using JuMP
 

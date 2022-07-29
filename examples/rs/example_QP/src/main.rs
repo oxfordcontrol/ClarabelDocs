@@ -1,8 +1,6 @@
 #![allow(non_snake_case)]
-
 use clarabel::algebra::*;
 use clarabel::solver::*;
-
 
 fn main() {
 
@@ -33,15 +31,7 @@ fn main() {
 
     let cones = [ZeroConeT(1), NonnegativeConeT(4)];
 
-    // all default settings like this ...
-    //let settings = DefaultSettings::default();
-
-    // customized settings like this ...
-    let settings = DefaultSettingsBuilder::default()
-        .equilibrate_enable(true)
-        .max_iter(50)
-        .build()
-        .unwrap();
+    let settings = DefaultSettings::default();
 
     let mut solver = DefaultSolver::new(&P, &q, &A, &b, &cones, settings);
 

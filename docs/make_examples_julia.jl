@@ -5,9 +5,10 @@ fix_math_md(content) = replace(content, r"\$\$(.*?)\$\$"s => s"```math\1```")
 fix_suffix(filename) = replace(filename, ".jl" => ".md")
 
 function postprocess(cont)
-      """
-      Source files for Julia examples can be found in [examples/jl](**root**/examples/jl).
-      """ * cont
+
+      """ Source files for Julia examples can be found in [examples/jl](" *
+      joinpath(@__DIR__, "../examples/jl") * """
+      cont
 end
 
 # function postprocess(cont)
@@ -47,5 +48,5 @@ build_path =  joinpath(@__DIR__, "src", "literate", "build/")
 files = readdir(example_path)
 filter!(x -> endswith(x, ".jl"), files)
 for file in files
-      Literate.markdown(example_path * file, build_path; preprocess = fix_math_md, documenter = true, credit = true)
+      Literate.markdown(example_path * file, build_path; preprocess = fix_math_md, postprocess = Nothing, documenter = true, credit = true)
 end

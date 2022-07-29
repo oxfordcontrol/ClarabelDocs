@@ -1,12 +1,14 @@
-using Documenter, DocumenterTools, Clarabel, Literate
+using Documenter, Clarabel, Literate
 
 @info "Building example problems..."
 
-include("make_examples_julia.jl")
+#include("make_examples_julia.jl")
 
 @info "Making documentation..."
 
 include("pages.jl")
+
+pages = []
 
 makedocs(
   sitename="Clarabel jl/rs",

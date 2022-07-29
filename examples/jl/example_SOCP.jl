@@ -9,22 +9,11 @@ and also by solving with Clarabel.jl within JuMP.
 To solve the problem directly within Clarabel.jl, start by creating the solver and settings:
 =#
 
-using Clarabel, LinearAlgebra, SparseArrays
-
-settings = Clarabel.Settings(verbose = true)
-solver   = Clarabel.Solver()
-
-#=
-### Objective function data
-
-Next define the data for the objective function and the constraints:
-=#
+using Clarabel, SparseArrays
 
 P = sparse([0. 0.;0. 1.].*2)
-q = [0., 0.]
-nothing  #hide
 
-#
+q = [0., 0.]
 
 A = sparse([0.  0.
            -2.  0.;
@@ -35,18 +24,22 @@ b = [ 1.
 
 cones = [Clarabel.SecondOrderConeT(3)]
 
-nothing  #hide
+settings = Clarabel.Settings(max_iter = 15, verbose = true)
 
-
-# Finally populate the solver with problem data and solve:
+solver   = Clarabel.Solver()
 
 Clarabel.setup!(solver, P, q, A, b, cones, settings)
+
 result = Clarabel.solve!(solver)
 
-# then retrieve the solution:
+nothing #hide
+
+#
+result #hide
+
+#
 
 result.x
-
 
 # ## Using JuMP
 
