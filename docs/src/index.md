@@ -1,8 +1,11 @@
 __Clarabel__ is an interior point numerical solver for convex optimization problems using a novel homogeneous embedding.  The Clarabel package solves the following problem:
 
 ```math
-\begin{array}{ll} \text{minimize} & \textstyle{\frac{1}{2}}x^\top Px + q^\top x\\ \text{subject to} & Ax + s = b \\ & s \in \mathcal{K},
-\end{array}
+\begin{array}{r}
+\text{minimize} & \frac{1}{2}x^T P x + q^T x\\\\[2ex]
+ \text{subject to} & Ax + s = b \\\\[1ex]
+        & s \in \mathcal{K}
+ \end{array}
 ```
 
 with decision variables ``x \in \mathbb{R}^n``, ``s \in \mathbb{R}^m`` and data matrices ``P=P^\top \succeq 0``, ``q \in \mathbb{R}^n``, ``A \in \mathbb{R}^{m \times n}``, and ``b \in \mathbb{R}^m``. The convex set ``\mathcal{K}`` is a composition of convex cones.
