@@ -6,7 +6,6 @@ The Clarabel Python interface supports version 3.7 or newer.   To install direct
 pip install clarabel
 ```
 
-
 ### Installing from source
 
 You can also download and build the repository directly from Github.   You will need to have a working Rust installation to compile the Python interface.
