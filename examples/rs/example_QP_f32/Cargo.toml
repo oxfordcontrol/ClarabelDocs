@@ -1,0 +1,10 @@
+[package]
+name = "Clarabel_QP_Example_f32"
+version = "0.0.0"
+authors = ["Paul Goulart <paul.goulart@eng.ox.ac.uk>"]
+edition = "2021"
+license = "Apache-2.0"
+description = "Clarabel Conic Interior Point Solver : QP Example (32 bit)"
+
+[dependencies]
+clarabel = {version = "0"}
