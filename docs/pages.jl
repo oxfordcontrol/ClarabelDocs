@@ -38,7 +38,8 @@ pages = [
       "Citing Clarabel" => "citing.md",
       "Contributing" => "contributing.md",
       "API Reference" => Any[
-          "Julia API" => "api_jl.md"
+          "Solver Settings" => "api_settings.md",
+          "Julia API" => "api_jl.md",
           "Rust API \u29C9" => "api_rs.md"
     ]
   ]

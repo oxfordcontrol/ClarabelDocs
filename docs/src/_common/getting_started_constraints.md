@@ -5,6 +5,9 @@ Cone Type| Description
 `ZeroConeT`    | The set ``\{ 0 \}^{dim}`` that contains the origin
 `NonnegativeConeT` | The nonnegative orthant ``\{ x \in \mathbb{R}^{dim} : x_i \ge 0, \forall i=1,\dots,\mathrm{dim} \}``
 `SecondOrderConeT` | The second-order (Lorenz) cone ``\{ (t,x) \in \mathbb{R}^{dim}  :  \|x\|_2   \leq t \}``
+`ExponentialConeT` | The exponential cone ``\{(x, y, z) : y > 0,~~ ye^{x/y} ≤ z \}``
+`PowerConeT` | The power cone ``\{(x, y, z) : x^\alpha y^{(1-\alpha)} \geq  \|z\|,~ (x,y) \geq 0 \}`` with ``\alpha \in (0,1)``
+
 
 
 Suppose that we have a problem with decision variable ``x \in \mathbb{R}^3`` and our constraints are:

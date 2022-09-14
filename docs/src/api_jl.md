@@ -14,12 +14,6 @@ Clarabel.solve!
 Clarabel.SupportedCone
 ```
 
-## [Settings](@id api-settings)
-
-```@docs
-Clarabel.Settings
-```
-
 ## [Solver Status](@id api-solverstatus)
 
 ```@docs
