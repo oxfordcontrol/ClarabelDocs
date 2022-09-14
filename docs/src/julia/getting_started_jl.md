@@ -136,12 +136,17 @@ Once the solver algorithm terminates you can inspect the solution using the `sol
 
 Status Code  | Description
 ---  | :---
-UNSOLVED            |  Default value, only occurs prior to calling `Clarabel.solve!`
-SOLVED              |  Solution found
-PRIMAL_INFEASIBLE   |  Problem is primal infeasible
-DUAL_INFEASIBLE     |  Problem is dual infeasible
-MAX_ITERATIONS      |  Solver halted after reaching iteration limit
-MAX_TIME            |  Solver halted after reaching time limit
+SOLVED                      |   Solver terminated with a solution.
+PRIMAL_INFEASIBLE           |   Problem is primal infeasible.  Solution returned is a certificate of primal infeasibility.
+DUAL_INFEASIBLE             |   Problem is dual infeasible.  Solution returned is a certificate of dual infeasibility.
+ALMOST\_SOLVED               |   Solver terminated with a solution (reduced accuracy).
+ALMOST\_PRIMAL\_INFEASIBLE    |   Problem is primal infeasible.  Solution returned is a certificate of primal infeasibility (reduced accuracy).
+ALMOST\_DUAL\_INFEASIBLE      |   Problem is dual infeasible.  Solution returned is a certificate of dual infeasibility (reduced accuracy).
+MAX\_ITERATIONS              |   Iteration limit reached before solution or infeasibility certificate found.
+MAX\_TIME                    |   Time limit reached before solution or infeasibility certificate found.
+NUMERICAL\_ERROR             |   Solver terminated with a numerical error.
+INSUFFICIENT\_PROGRESS       |   Solver terminated due to lack of progress.
+
 
 The total solution time (include combined `setup!` and `solve!` times) is given in `solution.solve_time`.   Detailed information about the solve time and memory allocation can be found in the solver's `timer` field.
 
