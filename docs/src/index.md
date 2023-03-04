@@ -10,7 +10,7 @@ __Clarabel__ is an interior point numerical solver for convex optimization probl
 
 with decision variables ``x \in \mathbb{R}^n``, ``s \in \mathbb{R}^m`` and data matrices ``P=P^\top \succeq 0``, ``q \in \mathbb{R}^n``, ``A \in \mathbb{R}^{m \times n}``, and ``b \in \mathbb{R}^m``. The convex set ``\mathcal{K}`` is a composition of convex cones.
 
-Clarabel is available in either a native [Julia](https://www.julia.org) or a native [Rust](https://www.rust-lang.org/) implementation, with a Python interface also available for the Rust version.
+Clarabel is available in either a native [Julia](https://julialang.org/) or a native [Rust](https://www.rust-lang.org/) implementation, with a Python interface also available for the Rust version.
 
 ## Features
 
