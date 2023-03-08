@@ -61,6 +61,14 @@ let q = vec![1., 2., -3.];
     ```
     to construct a sparse matrix with no entries.
 
+    The solver will not conduct any check on the internal correctness of matrices 
+    passed in CscMatrix format.   You can do this externally using the `check_format`
+    method, e.g.:
+    ```rust 
+    assert!(P.check_format().is_ok());
+    ```
+    
+
 
 ## Constraints
 
@@ -97,6 +105,9 @@ let Aeq = CscMatrix::new(
     let A = CscMatrix::vcat(&A, &Asoc);
 
     let b = vec![1., 2., 2., 0., 0., 0.];
+
+    // optional correctness check 
+    assert!(A.check_format().is_ok());
 ```
 
 Clarabel.rs expects to receive a vector of cone specifications.  For the above constraints we should also define

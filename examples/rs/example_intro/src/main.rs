@@ -32,6 +32,12 @@ fn main() {
         vec![1., 1.],     // nzval
     );
 
+    //Optional correctness checks for matrix formatting.  
+    //Package will not do this for you.
+    assert!(P.check_format().is_ok());
+    assert!(Aeq.check_format().is_ok());
+    assert!(Aineq.check_format().is_ok());
+
     let mut Asoc = CscMatrix::identity(3);
     Asoc.negate();
 
