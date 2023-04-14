@@ -36,6 +36,8 @@ P = sparse.csc_matrix(
          [-1., 4.,  5.]])
 
 P = sparse.triu(P).tocsc()
+
+q = np.array([1., 2., -3.])
 ```
 
 ## Constraints
