@@ -8,5 +8,5 @@ is a composition of smaller convex cones ``\mathcal{K} = \mathcal{K}_1 \times \m
 
 To initialize the solver with an optimisation problem we require three things:
 * The objective function, i.e. the matrix `P` and the vector `q` in ``\frac{1}{2}x^\top P x + q^\top x``.
-* The data matrix `A` and vector `b`, along with a description of the composite cone `\mathcal{K}` and the dimensions of its constituent pieces.
+* The data matrix `A` and vector `b`, along with a description of the composite cone ``\mathcal{K}`` and the dimensions of its constituent pieces.
 * A `settings` object that specifies how Clarabel solves the problem.
