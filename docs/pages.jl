@@ -32,7 +32,7 @@ pages = [
                 "Installation" => "python/installation_py.md",
                 "Getting Started" => "python/getting_started_py.md",
           ],
-          "R \u29C9" => "user_guide_r.md"
+          "R" => "user_guide_r.md",
       ],
       #"Method" => "method.md",
       "Examples" => examples,

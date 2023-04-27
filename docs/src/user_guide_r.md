@@ -1,12 +1,5 @@
-### [R User Guide](@id user-guide-r)
+### [R Installation and User Guide](@id user-guide-r)
 
-```@raw html
-    <head>
-        <title>Old Page</title>
-     <meta charset="UTF-8" />
-     <meta http-equiv="refresh" content="0; URL=https://oxfordcontrol.github.io/clarabel-r/articles/clarabel.html" />
-   </head>
-   <body>
-     <p>Clarabel R Interface User Guide is at <a href="https://oxfordcontrol.github.io/clarabel-r/articles/clarabel.html</a>. Trying to redirect you...</p>
-   </body>
-```
+The R interface to Clarabel can be installed either directly or via [CRAN](https://cran.r-project.org/web/packages/clarabel/index.html).
+
+The installation and user guide can be found [here](https://oxfordcontrol.github.io/clarabel-r/index.html).

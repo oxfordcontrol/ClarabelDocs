@@ -1,6 +1,6 @@
 # Getting Started
 
-This section describes the process of creating a Clarabel model in Python, populating its settings and problem data, solving the problem and obtaining and understanding results.   It is assumed here that you are building your project using `cargo`.
+This section describes the process of creating a Clarabel model directly in Python, populating its settings and problem data, solving the problem and obtaining and understanding results.  The complete example from this page can be obtained [here](../../examples/py/example_intro.html). 
 
 The first step is to bring the Clarabel solver and other required packages into scope in your code using:
 
@@ -33,9 +33,11 @@ The Clarabel default implementation in Python expects matrix data in Compressed 
 P = sparse.csc_matrix(
         [[ 3., 1., -1.],
          [ 1., 4.,  2.],
-         [-1., 4.,  5.]])
+         [-1., 2.,  5.]])
 
 P = sparse.triu(P).tocsc()
+
+q = np.array([1.,2.,-3.])
 ```
 
 ## Constraints
@@ -97,14 +99,14 @@ Documenter.md_include(
 Solver settings for the Clarabel's default implementation in Rust are stored in a `PyDefaultSettings` object and can be modified by the user. To create a settings object using all defaults you can call the constructor directly:
 
 ```rust
-settings = clarabel.DefaultSettings();
+settings = clarabel.DefaultSettings()
 ```
 
 If you want to disable verbose printing and set a 5 second time limit on the solver, you can then just modify the fields:
 
 ```python
-settings.verbose = True;
-settings.time_limit = 5.;
+settings.verbose = True
+settings.time_limit = 5.
 ```
 
 The Clarabel Python interface set supports the same options as those listed in the [Rust API Reference](@ref api-ref-rust).
@@ -113,8 +115,8 @@ The Clarabel Python interface set supports the same options as those listed in t
 
 Finally, populate the solver with problem data and solve:
 
-```rust
-solver = clarabel.DefaultSolver(P,q,A,b,cones,settings);
+```python
+solver = clarabel.DefaultSolver(P,q,A,b,cones,settings)
 
 solution = solver.solve()
 ```
@@ -132,3 +134,14 @@ MaxIterations      |  Solver halted after reaching iteration limit
 MaxTime            |  Solver halted after reaching time limit
 
 The total solution time is available in `solution.solve_time`.  
+
+## CVXPY interface 
+
+The same problem above can also be modelled in CVXPY and solved via Clarabel.
+
+````@eval
+using Documenter
+Documenter.md_include(
+  source = "examples/py/example_intro_cvxpy.py",
+  language = :python)
+````
