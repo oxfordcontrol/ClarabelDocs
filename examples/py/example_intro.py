@@ -6,11 +6,11 @@ from scipy import sparse
 P = sparse.csc_matrix(
         [[ 3., 1., -1.],
          [ 1., 4.,  2.],
-         [-1., 4.,  5.]])
+         [-1., 2.,  5.]])
 
 P = sparse.triu(P).tocsc()
 
-q = np.array([1,2,-3.])
+q = np.array([1.,2.,-3.])
 
 # equality constraint
 Aeq = sparse.csc_matrix([1.,1.,-1])
@@ -35,10 +35,10 @@ cones = [clarabel.ZeroConeT(1),
          clarabel.NonnegativeConeT(2),
          clarabel.SecondOrderConeT(3)]
 
-settings = clarabel.DefaultSettings();
-settings.verbose = True;
-settings.time_limit = 5.;
+settings = clarabel.DefaultSettings()
+settings.verbose = True
+settings.time_limit = 5.
 
-solver = clarabel.DefaultSolver(P,q,A,b,cones,settings);
+solver = clarabel.DefaultSolver(P,q,A,b,cones,settings)
 
 solver.solve()
