@@ -55,18 +55,18 @@ iter    pcost        dcost       gap       pres      dres      k/t        μ    
   1   9.3926e-01   7.9266e-01  1.47e-01  6.38e-03  5.39e-17  4.74e-02  1.60e-01  9.67e-01
   2   9.9952e-01   9.9654e-01  2.97e-03  6.30e-05  5.24e-20  8.14e-04  2.68e-03  9.90e-01
   3   1.0000e+00   9.9997e-01  2.98e-05  6.30e-07  1.15e-21  8.16e-06  2.69e-05  9.90e-01
-  4   1.0000e+00   1.0000e+00  2.98e-07  6.30e-09  1.77e-23  8.16e-08  2.69e-07  9.90e-01
-  5   1.0000e+00   1.0000e+00  2.98e-09  6.30e-11  2.50e-25  8.16e-10  2.69e-09  9.90e-01
+  4   1.0000e+00   1.0000e+00  2.98e-07  6.30e-09  5.33e-17  8.16e-08  2.69e-07  9.90e-01
+  5   1.0000e+00   1.0000e+00  2.98e-09  6.30e-11  5.33e-17  8.16e-10  2.69e-09  9.90e-01
 ---------------------------------------------------------------------------------------------
 Terminated with status = solved
-solve time =  652μs</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">&gt;&gt;&gt; Clarabel - Results
+solve time =  688μs</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">&gt;&gt;&gt; Clarabel - Results
 Status: SOLVED
 Iterations: 5
 Objective: 1.000
-Solve time:  652μs
+Solve time:  688μs
 </code></pre><pre><code class="language-julia hljs">result.x</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
  1.0000000000000002
- 0.9999999997592768</code></pre><h2 id="Using-JuMP"><a class="docs-heading-anchor" href="#Using-JuMP">Using JuMP</a><a id="Using-JuMP-1"></a><a class="docs-heading-anchor-permalink" href="#Using-JuMP" title="Permalink"></a></h2><p>We can solve the same problem using Clarabel.jl as the backend solver within <a href="http://www.juliaopt.org/JuMP.jl/stable/">JuMP</a>. Here is the same problem again:</p><pre><code class="language-julia hljs">using Clarabel, JuMP
+ 0.9999999997592767</code></pre><h2 id="Using-JuMP"><a class="docs-heading-anchor" href="#Using-JuMP">Using JuMP</a><a id="Using-JuMP-1"></a><a class="docs-heading-anchor-permalink" href="#Using-JuMP" title="Permalink"></a></h2><p>We can solve the same problem using Clarabel.jl as the backend solver within <a href="http://www.juliaopt.org/JuMP.jl/stable/">JuMP</a>. Here is the same problem again:</p><pre><code class="language-julia hljs">using Clarabel, JuMP
 
 model = JuMP.Model(Clarabel.Optimizer)
 set_optimizer_attribute(model, &quot;verbose&quot;, true)
@@ -106,13 +106,13 @@ iter    pcost        dcost       gap       pres      dres      k/t        μ    
   1   9.3926e-01   7.9266e-01  1.47e-01  6.38e-03  5.39e-17  4.74e-02  1.60e-01  9.67e-01
   2   9.9952e-01   9.9654e-01  2.97e-03  6.30e-05  5.24e-20  8.14e-04  2.68e-03  9.90e-01
   3   1.0000e+00   9.9997e-01  2.98e-05  6.30e-07  1.15e-21  8.16e-06  2.69e-05  9.90e-01
-  4   1.0000e+00   1.0000e+00  2.98e-07  6.30e-09  1.77e-23  8.16e-08  2.69e-07  9.90e-01
-  5   1.0000e+00   1.0000e+00  2.98e-09  6.30e-11  2.50e-25  8.16e-10  2.69e-09  9.90e-01
+  4   1.0000e+00   1.0000e+00  2.98e-07  6.30e-09  5.33e-17  8.16e-08  2.69e-07  9.90e-01
+  5   1.0000e+00   1.0000e+00  2.98e-09  6.30e-11  5.33e-17  8.16e-10  2.69e-09  9.90e-01
 ---------------------------------------------------------------------------------------------
 Terminated with status = solved
-solve time =  651μs</code></pre><p>Here is the solution</p><pre><code class="language-julia hljs">JuMP.value.(x)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
+solve time =  707μs</code></pre><p>Here is the solution</p><pre><code class="language-julia hljs">JuMP.value.(x)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
  1.0000000000000002
- 0.9999999997592768</code></pre><p>and the solver termination status again</p><pre><code class="language-julia hljs">JuMP.termination_status(model)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">OPTIMAL::TerminationStatusCode = 1</code></pre><h2 id="Using-Convex.jl"><a class="docs-heading-anchor" href="#Using-Convex.jl">Using Convex.jl</a><a id="Using-Convex.jl-1"></a><a class="docs-heading-anchor-permalink" href="#Using-Convex.jl" title="Permalink"></a></h2><p>One more time using Clarabel.jl as the backend solver within <a href="https://jump.dev/Convex.jl/stable/">Convex.jl</a>:</p><pre><code class="language-julia hljs">using Clarabel, Convex
+ 0.9999999997592767</code></pre><p>and the solver termination status again</p><pre><code class="language-julia hljs">JuMP.termination_status(model)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">OPTIMAL::TerminationStatusCode = 1</code></pre><h2 id="Using-Convex.jl"><a class="docs-heading-anchor" href="#Using-Convex.jl">Using Convex.jl</a><a id="Using-Convex.jl-1"></a><a class="docs-heading-anchor-permalink" href="#Using-Convex.jl" title="Permalink"></a></h2><p>One more time using Clarabel.jl as the backend solver within <a href="https://jump.dev/Convex.jl/stable/">Convex.jl</a>:</p><pre><code class="language-julia hljs">using Clarabel, Convex
 
 x = Variable(2)
 problem = minimize(square(x[2]))
@@ -156,6 +156,6 @@ iter    pcost        dcost       gap       pres      dres      k/t        μ    
   7   1.0000e+00   1.0000e+00  1.22e-09  7.91e-09  1.39e-09  4.77e-08  1.73e-08  9.66e-01
 ---------------------------------------------------------------------------------------------
 Terminated with status = solved
-solve time =  906μs</code></pre><p>Here is our solution</p><pre><code class="language-julia hljs">evaluate(x)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
- 0.9999999999999998
- 0.9999999565274059</code></pre><p>and the solver termination status again</p><pre><code class="language-julia hljs">problem.status</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">OPTIMAL::TerminationStatusCode = 1</code></pre><hr/><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../example_SOCP/">« Problem Description</a><a class="docs-footer-nextpage" href="../../rs/example_SOCP/">Rust »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Thursday 27 April 2023 14:23">Thursday 27 April 2023</span>. Using Julia version 1.7.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+solve time =  959μs</code></pre><p>Here is our solution</p><pre><code class="language-julia hljs">evaluate(x)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
+ 1.0
+ 0.9999999565274064</code></pre><p>and the solver termination status again</p><pre><code class="language-julia hljs">problem.status</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">OPTIMAL::TerminationStatusCode = 1</code></pre><hr/><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../example_SOCP/">« Problem Description</a><a class="docs-footer-nextpage" href="../../rs/example_SOCP/">Rust »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Thursday 27 April 2023 14:25">Thursday 27 April 2023</span>. Using Julia version 1.7.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

@@ -59,21 +59,21 @@ iter    pcost        dcost       gap       pres      dres      k/t        μ    
 ---------------------------------------------------------------------------------------------
   0  -3.2878e-01  -1.8973e+01  1.86e+01  9.76e-17  9.02e-17  1.00e+00  1.77e+00   ------
   1  -5.7453e-01  -1.8040e+00  1.23e+00  4.81e-17  3.23e-17  6.08e-02  1.15e-01  9.44e-01
-  2  -6.4203e-01  -7.5345e-01  1.11e-01  4.61e-17  7.23e-17  5.21e-03  8.97e-03  9.90e-01
-  3  -6.4286e-01  -6.4541e-01  2.55e-03  1.15e-16  3.26e-17  1.19e-04  2.00e-04  9.90e-01
-  4  -6.4286e-01  -6.4288e-01  2.63e-05  5.69e-17  3.63e-17  1.23e-06  2.06e-06  9.90e-01
-  5  -6.4286e-01  -6.4286e-01  2.63e-07  8.81e-15  1.81e-14  1.23e-08  2.06e-08  9.90e-01
-  6  -6.4286e-01  -6.4286e-01  2.63e-09  2.78e-16  3.82e-16  1.23e-10  2.06e-10  9.90e-01
+  2  -6.4203e-01  -7.5345e-01  1.11e-01  1.63e-17  3.25e-17  5.21e-03  8.97e-03  9.90e-01
+  3  -6.4286e-01  -6.4541e-01  2.55e-03  1.08e-16  3.26e-17  1.19e-04  2.00e-04  9.90e-01
+  4  -6.4286e-01  -6.4288e-01  2.63e-05  4.89e-17  7.99e-18  1.23e-06  2.06e-06  9.90e-01
+  5  -6.4286e-01  -6.4286e-01  2.63e-07  8.82e-15  1.81e-14  1.23e-08  2.06e-08  9.90e-01
+  6  -6.4286e-01  -6.4286e-01  2.63e-09  2.30e-16  4.02e-16  1.23e-10  2.06e-10  9.90e-01
 ---------------------------------------------------------------------------------------------
 Terminated with status = solved
-solve time = 64.4ms</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">&gt;&gt;&gt; Clarabel - Results
+solve time = 66.1ms</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">&gt;&gt;&gt; Clarabel - Results
 Status: SOLVED
 Iterations: 6
 Objective: -0.6429
-Solve time: 64.4ms
+Solve time: 66.1ms
 </code></pre><pre><code class="language-julia hljs">result.x</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
- 0.4285714281988431
- 0.21428571409942157</code></pre><h2 id="Using-JuMP"><a class="docs-heading-anchor" href="#Using-JuMP">Using JuMP</a><a id="Using-JuMP-1"></a><a class="docs-heading-anchor-permalink" href="#Using-JuMP" title="Permalink"></a></h2><p>We can solve the same problem a little more easily by using Clarabel.jl as the backend solver within <a href="http://www.juliaopt.org/JuMP.jl/stable/">JuMP</a>. Here is the same problem again:</p><pre><code class="language-julia hljs">using Clarabel, JuMP
+ 0.428571428198843
+ 0.2142857140994215</code></pre><h2 id="Using-JuMP"><a class="docs-heading-anchor" href="#Using-JuMP">Using JuMP</a><a id="Using-JuMP-1"></a><a class="docs-heading-anchor-permalink" href="#Using-JuMP" title="Permalink"></a></h2><p>We can solve the same problem a little more easily by using Clarabel.jl as the backend solver within <a href="http://www.juliaopt.org/JuMP.jl/stable/">JuMP</a>. Here is the same problem again:</p><pre><code class="language-julia hljs">using Clarabel, JuMP
 
 model = JuMP.Model(Clarabel.Optimizer)
 set_optimizer_attribute(model, &quot;verbose&quot;, true)
@@ -113,16 +113,16 @@ iter    pcost        dcost       gap       pres      dres      k/t        μ    
 ---------------------------------------------------------------------------------------------
   0  -3.2878e-01  -1.8973e+01  1.86e+01  9.48e-17  1.50e-16  1.00e+00  1.77e+00   ------
   1  -5.7453e-01  -1.8040e+00  1.23e+00  4.89e-17  6.32e-17  6.08e-02  1.15e-01  9.44e-01
-  2  -6.4203e-01  -7.5345e-01  1.11e-01  4.71e-17  3.34e-17  5.21e-03  8.97e-03  9.90e-01
-  3  -6.4286e-01  -6.4541e-01  2.55e-03  8.10e-17  0.00e+00  1.19e-04  2.00e-04  9.90e-01
-  4  -6.4286e-01  -6.4288e-01  2.63e-05  6.79e-17  6.58e-17  1.23e-06  2.06e-06  9.90e-01
-  5  -6.4286e-01  -6.4286e-01  2.63e-07  8.88e-15  1.81e-14  1.23e-08  2.06e-08  9.90e-01
-  6  -6.4286e-01  -6.4286e-01  2.63e-09  1.83e-16  3.45e-16  1.23e-10  2.06e-10  9.90e-01
+  2  -6.4203e-01  -7.5345e-01  1.11e-01  5.91e-17  3.34e-17  5.21e-03  8.97e-03  9.90e-01
+  3  -6.4286e-01  -6.4541e-01  2.55e-03  1.14e-16  0.00e+00  1.19e-04  2.00e-04  9.90e-01
+  4  -6.4286e-01  -6.4288e-01  2.63e-05  4.71e-17  3.20e-17  1.23e-06  2.06e-06  9.90e-01
+  5  -6.4286e-01  -6.4286e-01  2.63e-07  8.82e-15  1.81e-14  1.23e-08  2.06e-08  9.90e-01
+  6  -6.4286e-01  -6.4286e-01  2.63e-09  1.96e-16  3.17e-16  1.23e-10  2.06e-10  9.90e-01
 ---------------------------------------------------------------------------------------------
 Terminated with status = solved
-solve time =  707μs</code></pre><p>Here is the solution</p><pre><code class="language-julia hljs">JuMP.value.(x)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
- 0.42857142819884314
- 0.2142857140994216</code></pre><p>and the solver termination status again</p><pre><code class="language-julia hljs">JuMP.termination_status(model)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">OPTIMAL::TerminationStatusCode = 1</code></pre><h2 id="Using-Convex.jl"><a class="docs-heading-anchor" href="#Using-Convex.jl">Using Convex.jl</a><a id="Using-Convex.jl-1"></a><a class="docs-heading-anchor-permalink" href="#Using-Convex.jl" title="Permalink"></a></h2><p>We can likewise solve the same problem a using Clarabel.jl as the backend solver within <a href="https://jump.dev/Convex.jl/stable/">Convex.jl</a>.   Here is the same problem one more time:</p><pre><code class="language-julia hljs">using Clarabel, Convex
+solve time =  753μs</code></pre><p>Here is the solution</p><pre><code class="language-julia hljs">JuMP.value.(x)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
+ 0.4285714281988431
+ 0.21428571409942154</code></pre><p>and the solver termination status again</p><pre><code class="language-julia hljs">JuMP.termination_status(model)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">OPTIMAL::TerminationStatusCode = 1</code></pre><h2 id="Using-Convex.jl"><a class="docs-heading-anchor" href="#Using-Convex.jl">Using Convex.jl</a><a id="Using-Convex.jl-1"></a><a class="docs-heading-anchor-permalink" href="#Using-Convex.jl" title="Permalink"></a></h2><p>We can likewise solve the same problem a using Clarabel.jl as the backend solver within <a href="https://jump.dev/Convex.jl/stable/">Convex.jl</a>.   Here is the same problem one more time:</p><pre><code class="language-julia hljs">using Clarabel, Convex
 
 x = Variable(2)
 problem = minimize(3square(x[1]) + 2square(x[2]) - x[1] - 4x[2])
@@ -165,10 +165,10 @@ iter    pcost        dcost       gap       pres      dres      k/t        μ    
   5  -6.4289e-01  -6.4301e-01  1.15e-04  5.79e-06  2.67e-06  1.86e-05  3.78e-05  8.43e-01
   6  -6.4286e-01  -6.4287e-01  1.14e-05  5.75e-07  2.66e-07  1.89e-06  3.76e-06  9.13e-01
   7  -6.4286e-01  -6.4286e-01  2.84e-07  1.44e-08  6.63e-09  4.79e-08  9.38e-08  9.77e-01
-  8  -6.4286e-01  -6.4286e-01  1.46e-08  1.57e-09  3.40e-10  2.46e-09  4.81e-09  9.49e-01
-  9  -6.4286e-01  -6.4286e-01  2.53e-09  2.48e-10  5.91e-11  4.30e-10  8.36e-10  8.37e-01
+  8  -6.4286e-01  -6.4286e-01  1.46e-08  2.52e-09  3.40e-10  2.46e-09  4.81e-09  9.49e-01
+  9  -6.4286e-01  -6.4286e-01  2.53e-09  4.34e-10  5.91e-11  4.30e-10  8.36e-10  8.37e-01
 ---------------------------------------------------------------------------------------------
 Terminated with status = solved
-solve time = 1.14ms</code></pre><p>Here is our solution</p><pre><code class="language-julia hljs">evaluate(x)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
- 0.42857345978763695
- 0.21428672989385952</code></pre><p>and the solver termination status again</p><pre><code class="language-julia hljs">problem.status</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">OPTIMAL::TerminationStatusCode = 1</code></pre><div class="admonition is-warning"><header class="admonition-header">Warning</header><div class="admonition-body"><p>Note that in the Clarabel.jl output that follows the call to solve! using Convex.jl, the problem posed to the solver has been converted to a second-order cone program with a linear objective.   You can see this because now <code>nnz(P) == 0</code> (there is no quadratic term in the objective) and the solver reports two second order cone constraints.</p><p>Although the solution will be the same, the required number of iterations and solve time are slightly higher.  When solving problems with quadratic objectives in Clarabel.jl, it is generally preferable to use either the  native Clarabel.jl interface or JuMP, both of which handle quadratic terms in the objective directly.</p></div></div><hr/><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../example_QP/">« Problem Description</a><a class="docs-footer-nextpage" href="../../rs/example_QP/">Rust »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Thursday 27 April 2023 14:23">Thursday 27 April 2023</span>. Using Julia version 1.7.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+solve time = 1.18ms</code></pre><p>Here is our solution</p><pre><code class="language-julia hljs">evaluate(x)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
+ 0.42857345927489715
+ 0.21428672963748968</code></pre><p>and the solver termination status again</p><pre><code class="language-julia hljs">problem.status</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">OPTIMAL::TerminationStatusCode = 1</code></pre><div class="admonition is-warning"><header class="admonition-header">Warning</header><div class="admonition-body"><p>Note that in the Clarabel.jl output that follows the call to solve! using Convex.jl, the problem posed to the solver has been converted to a second-order cone program with a linear objective.   You can see this because now <code>nnz(P) == 0</code> (there is no quadratic term in the objective) and the solver reports two second order cone constraints.</p><p>Although the solution will be the same, the required number of iterations and solve time are slightly higher.  When solving problems with quadratic objectives in Clarabel.jl, it is generally preferable to use either the  native Clarabel.jl interface or JuMP, both of which handle quadratic terms in the objective directly.</p></div></div><hr/><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../example_QP/">« Problem Description</a><a class="docs-footer-nextpage" href="../../rs/example_QP/">Rust »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 0.27.24 on <span class="colophon-date" title="Thursday 27 April 2023 14:25">Thursday 27 April 2023</span>. Using Julia version 1.7.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
