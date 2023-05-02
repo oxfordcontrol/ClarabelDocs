@@ -3,6 +3,6 @@ Complete Cargo projects for all Rust examples can be found in [examples/rs](http
 ````@eval
 using Documenter
 Documenter.md_include(
-  source = "examples/rs/example_QP/src/main.rs",
+  source = "examples/rs/example_qp/src/main.rs",
   language = :rust)
 ````

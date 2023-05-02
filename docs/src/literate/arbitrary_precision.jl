@@ -18,7 +18,7 @@ solver   = Clarabel.Solver{BigFloat}()
 #=
 ### Objective and constraint data
 
-We next put the objective function into the standard Clarabel.jl form.   Here we use the same problem data as in the [Basic QP Example](@ref), but in `BigFloat` format :
+We next put the objective function into the standard Clarabel.jl form.   Here we use the same problem data as in the [QP Example](@ref), but in `BigFloat` format :
 =#
 
 P = sparse(BigFloat[3. 0.;0. 2.].*2)

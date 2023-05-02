@@ -1,4 +1,4 @@
-# Basic QP Example
+# QP Example
 
 Suppose that we want to solve the following 2-dimensional quadratic programming problem:
 

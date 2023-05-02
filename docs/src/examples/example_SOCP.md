@@ -1,4 +1,4 @@
-# Basic SOCP Example
+# SOCP Example
 
 Suppose that we want to solve the following 2-dimensional optimization problem:
 
