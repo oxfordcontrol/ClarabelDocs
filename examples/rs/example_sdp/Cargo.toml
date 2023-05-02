@@ -1,0 +1,10 @@
+[package]
+name = "clarabel_sdp_example"
+version = "0.0.0"
+authors = ["Paul Goulart <paul.goulart@eng.ox.ac.uk>"]
+edition = "2021"
+license = "Apache-2.0"
+description = "Clarabel Conic Interior Point Solver : SDP Example"
+
+[dependencies]
+clarabel = {version = "0"}
