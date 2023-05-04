@@ -14,7 +14,7 @@ Clarabel is available in either a native [Julia](https://julialang.org/) or a na
 
 ## Features
 
-* __Versatile__: Clarabel solves linear programs (LPs), quadratic programs (QPs), second-order cone programs (SOCPs), and problems with exponential and power cone constraints.  The Julia version also solves semidefinite programs (SDPs).  
+* __Versatile__: Clarabel solves linear programs (LPs), quadratic programs (QPs), semidefinite programs (SDPs), second-order cone programs (SOCPs), and problems with exponential and power cone constraints.
 * __Quadratic objectives__: Unlike interior point solvers based on the standard homogeneous self-dual embedding (HSDE) model, Clarabel handles quadratic objective without requiring any epigraphical reformulation of its objective function.   It can therefore be significantly faster than other HSDE-based solvers for problems with quadratic objective functions.
 * __Infeasibility detection__: Infeasible problems are detected using using a homogeneous embedding technique.
 * __Arbitrary precision types__: You can solve problems with any floating point precision, e.g. Float32 or Julia's BigFloat type in Julia and f32 or f64 types in Rust.
