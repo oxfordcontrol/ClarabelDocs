@@ -10,7 +10,7 @@
                          language = :julia,
                          plaintext = false)
 
-        root   = Documenter.Utilities.repo_root(".")
+        root   = Documenter.find_root_parent(Documenter.is_git_repo_root,".")
         source = joinpath(root,source)
 
         @info "md_include importing from:" source

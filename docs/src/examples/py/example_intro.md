@@ -1,4 +1,4 @@
-# Python "Getting Started" complete example
+# [Python "Getting Started" complete example] (@id python_example_intro_complete)
 
 ````@eval
 using Documenter

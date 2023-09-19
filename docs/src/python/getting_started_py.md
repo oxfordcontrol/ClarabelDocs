@@ -1,6 +1,6 @@
 # Getting Started
 
-This section describes the process of creating a Clarabel model directly in Python, populating its settings and problem data, solving the problem and obtaining and understanding results.  The complete example from this page can be obtained [here](../../examples/py/example_intro.html). 
+This section describes the process of creating a Clarabel model directly in Python, populating its settings and problem data, solving the problem and obtaining and understanding results.  The complete example from this page can be found [here](@ref python_example_intro_complete).
 
 The first step is to bring the Clarabel solver and other required packages into scope in your code using:
 
@@ -137,7 +137,7 @@ MaxTime            |  Solver halted after reaching time limit
 
 The total solution time is available in `solution.solve_time`.  
 
-## CVXPY interface 
+## CVXPY Interface
 
 The same problem above can also be modelled in CVXPY and solved via Clarabel.
 
