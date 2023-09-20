@@ -6,21 +6,21 @@ from scipy import sparse
 P = sparse.csc_matrix([[0., 0.], [0, 0]])
 P = sparse.triu(P).tocsc()
 
-q = np.array([-1.,-4.])
+q = np.array([-1., -4.])
 
-A = sparse.csc_matrix( \
-    [[ 1., -2.],        #<-- LHS of equality constraint (lower bound)
-     [ 1.,  0.],        #<-- LHS of inequality constraint (upper bound)
-     [ 0.,  1.],        #<-- LHS of inequality constraint (upper bound)
-     [-1.,  0.],        #<-- LHS of inequality constraint (lower bound)
-     [ 0., -1.]])       #<-- LHS of inequality constraint (lower bound)
+A = sparse.csc_matrix(
+    [[1., -2.],        # <-- LHS of equality constraint (lower bound)
+     [1.,  0.],        # <-- LHS of inequality constraint (upper bound)
+     [0.,  1.],        # <-- LHS of inequality constraint (upper bound)
+     [-1.,  0.],       # <-- LHS of inequality constraint (lower bound)
+     [0., -1.]])       # <-- LHS of inequality constraint (lower bound)
 
-b = np.array([0.,1.,1.,1.,1.])
+b = np.array([0., 1., 1., 1., 1.])
 
 cones = [clarabel.ZeroConeT(1), clarabel.NonnegativeConeT(4)]
 
 settings = clarabel.DefaultSettings()
 
-solver = clarabel.DefaultSolver(P,q,A,b,cones,settings)
+solver = clarabel.DefaultSolver(P, q, A, b, cones, settings)
 
 solver.solve()

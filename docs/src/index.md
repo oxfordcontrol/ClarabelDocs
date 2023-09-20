@@ -10,11 +10,11 @@ __Clarabel__ is an interior point numerical solver for convex optimization probl
 
 with decision variables ``x \in \mathbb{R}^n``, ``s \in \mathbb{R}^m`` and data matrices ``P=P^\top \succeq 0``, ``q \in \mathbb{R}^n``, ``A \in \mathbb{R}^{m \times n}``, and ``b \in \mathbb{R}^m``. The convex set ``\mathcal{K}`` is a composition of convex cones.
 
-Clarabel is available in either a native [Julia](https://julialang.org/) or a native [Rust](https://www.rust-lang.org/) implementation, with a Python interface also available for the Rust version.
+Clarabel is available in either a native [Julia](https://julialang.org/) or a native [Rust](https://www.rust-lang.org/) implementation. Additional language interfaces (Python, C/C++ and R) are available for the Rust version.
 
 ## Features
 
-* __Versatile__: Clarabel solves linear programs (LPs), quadratic programs (QPs), second-order cone programs (SOCPs), and problems with exponential and power cone constraints.  The Julia version also solves semidefinite programs (SDPs).  
+* __Versatile__: Clarabel solves linear programs (LPs), quadratic programs (QPs), second-order cone programs (SOCPs) and semidefinite programs (SDPs). It also solves problems with exponential, power cone and generalized power cone constraints.
 * __Quadratic objectives__: Unlike interior point solvers based on the standard homogeneous self-dual embedding (HSDE) model, Clarabel handles quadratic objective without requiring any epigraphical reformulation of its objective function.   It can therefore be significantly faster than other HSDE-based solvers for problems with quadratic objective functions.
 * __Infeasibility detection__: Infeasible problems are detected using using a homogeneous embedding technique.
 * __Arbitrary precision types__: You can solve problems with any floating point precision, e.g. Float32 or Julia's BigFloat type in Julia and f32 or f64 types in Rust.
