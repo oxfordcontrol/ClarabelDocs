@@ -1,3 +1,8 @@
+[compat]
+Distributions = "^0.25"
+Documenter = "1"
+Literate = "2.8"
+
 [deps]
 Clarabel = "61c947e1-3e6d-4ee4-985a-eec8c727bd6e"
 Convex = "f65535da-76fb-5f13-bab9-19810c17039a"
@@ -9,7 +14,5 @@ Literate = "98b081ad-f1c9-55d3-8b20-4c87d4299306"
 MathOptInterface = "b8f27783-ece8-5eb3-8dc8-9495eed66fee"
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 
-[compat]
-Documenter = "1"
-Literate = "2.8"
-Distributions = "^0.25"
+[extras]
+SnoopPrecompile = "66db9d55-30c0-4569-8b51-7e840670fc0c"
