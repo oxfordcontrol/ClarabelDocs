@@ -57,7 +57,7 @@ let q = vec![1., 2., -3.];
     ```
     where in this case we have had to be specific about the floating point data type we want.   To use a zero matrix (e.g. if solving an LP), you can use
     ```rust
-    let P = CscMatrix::spalloc(2,2,0);
+    let P = CscMatrix::spalloc((2,2),0);
     ```
     to construct a sparse matrix with no entries.
 
