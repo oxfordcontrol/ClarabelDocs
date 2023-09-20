@@ -1,5 +1,5 @@
 [package]
-name = "Clarabel_SOCP_Example"
+name = "clarabel_socp_example"
 version = "0.0.0"
 authors = ["Paul Goulart <paul.goulart@eng.ox.ac.uk>"]
 edition = "2021"

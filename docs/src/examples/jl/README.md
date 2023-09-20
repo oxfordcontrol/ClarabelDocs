@@ -1,1 +1,1 @@
-Julia examples in this directory are automatically built from the <repo>/examples/jl using the Literate.jl package during documentation build.
+Julia examples in this directory are automatically built from the <repo>/examples/jl using the Literate.jl package during documentation build.   

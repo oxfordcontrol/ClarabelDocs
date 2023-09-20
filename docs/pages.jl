@@ -1,15 +1,33 @@
 examples = [
-      "Basic QP Example" => Any[
-                "Problem Description" => "./examples/example_QP.md",
-                "Julia" => "./examples/jl/example_QP.md",
-                "Rust" => "./examples/rs/example_QP.md",
-                "Python" => "./examples/py/example_QP.md",
+      "Quadratic Program (QP)" => Any[
+            "Problem Description" => "./examples/example_qp.md",
+            "Julia" => "./examples/jl/example_qp.md",
+            "Rust" => "./examples/rs/example_qp.md",
+            "Python" => "./examples/py/example_qp.md",
       ]
-      "Basic SOCP Example" => Any[
-                "Problem Description" => "./examples/example_SOCP.md",
-                "Julia" => "./examples/jl/example_SOCP.md",
-                "Rust" => "./examples/rs/example_SOCP.md",
-                "Python" => "./examples/py/example_SOCP.md",
+      "Second-Order Cone Program (SOCP)" => Any[
+            "Problem Description" => "./examples/example_socp.md",
+            "Julia" => "./examples/jl/example_socp.md",
+            "Rust" => "./examples/rs/example_socp.md",
+            "Python" => "./examples/py/example_socp.md",
+      ]
+      "Exponential Cone Program" => Any[
+            "Problem Description" => "./examples/example_expcone.md",
+            "Julia" => "./examples/jl/example_expcone.md",
+            "Rust" => "./examples/rs/example_expcone.md",
+            "Python" => "./examples/py/example_expcone.md",
+      ]
+      "Power Cone Program" => Any[
+            "Problem Description" => "./examples/example_powcone.md",
+            "Julia" => "./examples/jl/example_powcone.md",
+            "Rust" => "./examples/rs/example_powcone.md",
+            "Python" => "./examples/py/example_powcone.md",
+      ]
+      "Semidefinite Program (SDP)" => Any[
+            "Problem Description" => "./examples/example_sdp.md",
+            "Julia" => "./examples/jl/example_sdp.md",
+            "Rust" => "./examples/rs/example_sdp.md",
+            "Python" => "./examples/py/example_sdp.md",
       ]
 ]
 
@@ -39,6 +57,7 @@ pages = [
       "Citing Clarabel" => "citing.md",
       "Contributing" => "contributing.md",
       "API Reference" => Any[
+          "Supported Cone Types" => "api_cone_types.md",
           "Solver Settings" => "api_settings.md",
           "Julia API" => "api_jl.md",
           "Rust API \u29C9" => "api_rs.md"

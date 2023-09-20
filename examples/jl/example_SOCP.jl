@@ -1,12 +1,10 @@
 #=
-# Basic SOCP Example in Julia
+# SOCP Example in Julia
 
 We will show how to solve this problem both natively in Clarabel.jl
 and also by solving with Clarabel.jl within JuMP.
 
 ## Clarabel.jl native interface
-
-To solve the problem directly within Clarabel.jl, start by creating the solver and settings:
 =#
 
 using Clarabel, SparseArrays

@@ -1,12 +1,4 @@
-Clarabel interface expects constraints to be presented in the single vectorized form ``Ax + s = b, s \in \mathcal{K}``, where ``\mathcal{K} = \mathcal{K}_1 \times \dots \times \mathcal{K}_p`` and each ``\mathcal{K}_i`` is one of the cones defined below:
-
-Cone Type| Description
------      |   :-----
-`ZeroConeT`    | The set ``\{ 0 \}^{dim}`` that contains the origin
-`NonnegativeConeT` | The nonnegative orthant ``\{ x \in \mathbb{R}^{dim} : x_i \ge 0, \forall i=1,\dots,\mathrm{dim} \}``
-`SecondOrderConeT` | The second-order (Lorenz) cone ``\{ (t,x) \in \mathbb{R}^{dim}  :  \|x\|_2   \leq t \}``
-`ExponentialConeT` | The exponential cone ``\{(x, y, z) : y > 0,~~ ye^{x/y} ≤ z \}``
-`PowerConeT` | The power cone ``\{(x, y, z) : x^\alpha y^{(1-\alpha)} \geq  \|z\|,~ (x,y) \geq 0 \}`` with ``\alpha \in (0,1)``
+The Clarabel interface expects constraints to be presented in the single vectorized form ``Ax + s = b, s \in \mathcal{K}``, where ``\mathcal{K} = \mathcal{K}_1 \times \dots \times \mathcal{K}_p`` and each ``\mathcal{K}_i`` is one of the solver's [supported cone types](@ref api-cone-types).
 
 
 

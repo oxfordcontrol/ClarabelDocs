@@ -16,8 +16,12 @@ end
 # not compilation time
 oldstream = stdout
 redirect_stdout(devnull)  #shh!!
-include(joinpath(@__DIR__, "../examples/jl", "example_QP.jl"))
-include(joinpath(@__DIR__, "../examples/jl/", "example_SOCP.jl"))
+include(joinpath(@__DIR__, "../examples/jl", "example_intro.jl"))
+include(joinpath(@__DIR__, "../examples/jl", "example_qp.jl"))
+include(joinpath(@__DIR__, "../examples/jl/", "example_socp.jl"))
+include(joinpath(@__DIR__, "../examples/jl/", "example_expcone.jl"))
+include(joinpath(@__DIR__, "../examples/jl/", "example_powcone.jl"))
+include(joinpath(@__DIR__, "../examples/jl/", "example_sdp.jl"))
 include(joinpath(@__DIR__, "./src/literate/", "arbitrary_precision.jl"))
 include(joinpath(@__DIR__, "./src/literate/", "convex_jl.jl"))
 redirect_stdout(oldstream)

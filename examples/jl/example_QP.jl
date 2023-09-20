@@ -1,5 +1,5 @@
 #=
-# Basic QP Example in Julia
+# Quadratic Program (QP) Example in Julia
 
 We will show how to solve the Basic QP example problem both natively in Clarabel.jl
 and also by solving with Clarabel.jl within either JuMP or Convex.jl.

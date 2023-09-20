@@ -1,10 +1,10 @@
 [package]
-name = "clarabel_qp_example_f32"
+name = "Clarabel_expcone_Example"
 version = "0.0.0"
 authors = ["Paul Goulart <paul.goulart@eng.ox.ac.uk>"]
 edition = "2021"
 license = "Apache-2.0"
-description = "Clarabel Conic Interior Point Solver : QP Example (32 bit)"
+description = "Clarabel Conic Interior Point Solver : Exponential Cone Example"
 
 [dependencies]
 clarabel = {version = "0"}

@@ -14,8 +14,6 @@ and interfaces all support the same set of options with identical field names.
 
 The full set of options follows below.
 
-
-
 ## [Settings](@id api-settings)
 
 ```@docs
