@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Julia · Clarabel jl/rs</title><meta name="title" content="Julia · Clarabel jl/rs"/><meta property="og:title" content="Julia · Clarabel jl/rs"/><meta property="twitter:title" content="Julia · Clarabel jl/rs"/><meta name="description" content="Documentation for Clarabel jl/rs."/><meta property="og:description" content="Documentation for Clarabel jl/rs."/><meta property="twitter:description" content="Documentation for Clarabel jl/rs."/><meta property="og:url" content="https://oxfordcontrol.github.io/ClarabelDocs/stable/examples/jl/example_powcone/"/><meta property="twitter:url" content="https://oxfordcontrol.github.io/ClarabelDocs/stable/examples/jl/example_powcone/"/><link rel="canonical" href="https://oxfordcontrol.github.io/ClarabelDocs/stable/examples/jl/example_powcone/"/><script async src="https://www.googletagmanager.com/gtag/js?id=G-FP3WPEJMVX"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FP3WPEJMVX', {'page_path': location.pathname + location.search + location.hash});
+</script><script data-outdated-warner src="../../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../../assets/documenter.js"></script><script src="../../../search_index.js"></script><script src="../../../siteinfo.js"></script><script src="../../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../../assets/themeswap.js"></script><link href="../../../assets/favicon.ico" rel="icon" type="image/x-icon"/><script src="../../../assets/github_buttons.js"></script><link href="../../../assets/custom.css" rel="stylesheet" type="text/css"/></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../../../"><img src="../../../assets/logo.png" alt="Clarabel jl/rs logo"/></a><div class="docs-package-name"><span class="docs-autofit"><a href="../../../">Clarabel jl/rs</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../../../">Home</a></li><li><span class="tocitem">User Guides</span><ul><li><input class="collapse-toggle" id="menuitem-2-1" type="checkbox"/><label class="tocitem" for="menuitem-2-1"><span class="docs-label">Julia</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../../julia/installation_jl/">Installation</a></li><li><a class="tocitem" href="../../../julia/getting_started_jl/">Getting Started</a></li><li><a class="tocitem" href="../../../julia/jump/">JuMP Interface</a></li><li><a class="tocitem" href="../../../literate/build/convex_jl/">Convex.jl Interface</a></li><li><a class="tocitem" href="../../../literate/build/arbitrary_precision/">Arbitrary Precision Arithmetic</a></li><li><a class="tocitem" href="../../../julia/linear_solvers/">Linear Solvers</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-2-2" type="checkbox"/><label class="tocitem" for="menuitem-2-2"><span class="docs-label">Rust</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../../rust/installation_rs/">Installation</a></li><li><a class="tocitem" href="../../../rust/getting_started_rs/">Getting Started</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-2-3" type="checkbox"/><label class="tocitem" for="menuitem-2-3"><span class="docs-label">Python</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../../python/installation_py/">Installation</a></li><li><a class="tocitem" href="../../../python/getting_started_py/">Getting Started</a></li></ul></li><li><a class="tocitem" href="../../../user_guide_c_cpp/">C/C++</a></li><li><a class="tocitem" href="../../../user_guide_r/">R</a></li></ul></li><li><span class="tocitem">Examples</span><ul><li><input class="collapse-toggle" id="menuitem-3-1" type="checkbox"/><label class="tocitem" for="menuitem-3-1"><span class="docs-label">Quadratic Program (QP)</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../example_qp/">Problem Description</a></li><li><a class="tocitem" href="../example_qp/">Julia</a></li><li><a class="tocitem" href="../../rs/example_qp/">Rust</a></li><li><a class="tocitem" href="../../py/example_qp/">Python</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-3-2" type="checkbox"/><label class="tocitem" for="menuitem-3-2"><span class="docs-label">Second-Order Cone Program (SOCP)</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../example_socp/">Problem Description</a></li><li><a class="tocitem" href="../example_socp/">Julia</a></li><li><a class="tocitem" href="../../rs/example_socp/">Rust</a></li><li><a class="tocitem" href="../../py/example_socp/">Python</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-3-3" type="checkbox"/><label class="tocitem" for="menuitem-3-3"><span class="docs-label">Exponential Cone Program</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../example_expcone/">Problem Description</a></li><li><a class="tocitem" href="../example_expcone/">Julia</a></li><li><a class="tocitem" href="../../rs/example_expcone/">Rust</a></li><li><a class="tocitem" href="../../py/example_expcone/">Python</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-3-4" type="checkbox" checked/><label class="tocitem" for="menuitem-3-4"><span class="docs-label">Power Cone Program</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../example_powcone/">Problem Description</a></li><li class="is-active"><a class="tocitem" href>Julia</a></li><li><a class="tocitem" href="../../rs/example_powcone/">Rust</a></li><li><a class="tocitem" href="../../py/example_powcone/">Python</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-3-5" type="checkbox"/><label class="tocitem" for="menuitem-3-5"><span class="docs-label">Semidefinite Program (SDP)</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../example_sdp/">Problem Description</a></li><li><a class="tocitem" href="../example_sdp/">Julia</a></li><li><a class="tocitem" href="../../rs/example_sdp/">Rust</a></li><li><a class="tocitem" href="../../py/example_sdp/">Python</a></li></ul></li></ul></li><li><a class="tocitem" href="../../../citing/">Citing Clarabel</a></li><li><a class="tocitem" href="../../../contributing/">Contributing</a></li><li><span class="tocitem">API Reference</span><ul><li><a class="tocitem" href="../../../api_cone_types/">Supported Cone Types</a></li><li><a class="tocitem" href="../../../api_settings/">Solver Settings</a></li><li><a class="tocitem" href="../../../api_jl/">Julia API</a></li><li><a class="tocitem" href="../../../api_rs/">Rust API ⧉</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Examples</a></li><li><a class="is-disabled">Power Cone Program</a></li><li class="is-active"><a href>Julia</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Julia</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/oxfordcontrol/ClarabelDocs" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/oxfordcontrol/ClarabelDocs/blob/main/examples/jl/example_powcone.jl" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><pre><code class="language-julia hljs">using Clarabel, SparseArrays
+
+P = spzeros(6,6)
+
+q = [0., 0., -1., 0., 0., -1.]
+
+A = sparse([
+       -1.  0.  0.  0.  0.  0.;
+        0. -1.  0.  0.  0.  0.;
+        0.  0. -1.  0.  0.  0.;
+        0.  0.  0. -1.  0.  0.;
+        0.  0.  0.  0. -1.  0.;
+        0.  0.  0.  0.  0. -1.;
+        1.  2.  0.  3.  0.  0.;
+        0.  0.  0.  0.  1.  0.])
+
+b = [0., 0., 0., 0., 0., 0., 3., 1.]
+
+cones  = [Clarabel.PowerConeT(0.6), Clarabel.PowerConeT(0.1), Clarabel.ZeroConeT(2)]
+
+solver = Clarabel.Solver()
+
+settings = Clarabel.Settings()
+
+Clarabel.setup!(solver, P, q, A, b, cones, settings)
+
+result = Clarabel.solve!(solver)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">-------------------------------------------------------------
+           Clarabel.jl v0.5.1  -  Clever Acronym
+                   (c) Paul Goulart
+                University of Oxford, 2022
+-------------------------------------------------------------
+
+problem:
+  variables     = 6
+  constraints   = 8
+  nnz(P)        = 0
+  nnz(A)        = 10
+  cones (total) = 3
+    : Zero        = 1,  numel = 2
+    : Power       = 2,  numel = (3,3)
+
+settings:
+  linear algebra: direct / qdldl, precision: Float64
+  max iter = 200, time limit = Inf,  max step = 0.990
+  tol_feas = 1.0e-08, tol_gap_abs = 1.0e-08, tol_gap_rel = 1.0e-08,
+  static reg : on, ϵ1 = 1.0e-08, ϵ2 = 4.9e-32
+  dynamic reg: on, ϵ = 1.0e-13, δ = 2.0e-07
+  iter refine: on, reltol = 1.0e-13, abstol = 1.0e-12,
+               max iter = 10, stop ratio = 5.0
+  equilibrate: on, min_scale = 1.0e-04, max_scale = 1.0e+04
+               max iter = 10
+
+iter    pcost        dcost       gap       pres      dres      k/t        μ       step
+---------------------------------------------------------------------------------------------
+  0   0.0000e+00  -0.0000e+00  0.00e+00  7.43e-01  1.02e+00  1.00e+00  1.00e+00   ------
+  1  -7.1316e-01  -6.9778e-01  1.54e-02  1.62e-01  2.18e-01  2.78e-01  2.70e-01  7.84e-01
+  2  -1.7671e+00  -1.7294e+00  2.18e-02  2.24e-02  2.72e-02  8.47e-02  3.72e-02  9.80e-01
+  3  -1.8255e+00  -1.8174e+00  4.45e-03  5.01e-03  5.98e-03  1.86e-02  8.29e-03  7.84e-01
+  4  -1.8405e+00  -1.8387e+00  9.50e-04  1.12e-03  1.33e-03  4.09e-03  1.85e-03  7.84e-01
+  5  -1.8442e+00  -1.8438e+00  2.06e-04  2.49e-04  2.96e-04  9.00e-04  4.12e-04  7.84e-01
+  6  -1.8451e+00  -1.8450e+00  4.48e-05  5.56e-05  6.61e-05  1.99e-04  9.19e-05  7.84e-01
+  7  -1.8453e+00  -1.8453e+00  1.03e-06  1.60e-06  1.90e-06  5.23e-06  2.64e-06  9.80e-01
+  8  -1.8454e+00  -1.8454e+00  2.25e-07  3.56e-07  4.23e-07  1.16e-06  5.88e-07  7.84e-01
+  9  -1.8454e+00  -1.8454e+00  5.40e-09  1.02e-08  1.22e-08  3.13e-08  1.69e-08  9.80e-01
+ 10  -1.8454e+00  -1.8454e+00  2.03e-09  3.87e-09  4.60e-09  1.18e-08  6.39e-09  6.27e-01
+---------------------------------------------------------------------------------------------
+Terminated with status = solved
+solve time = 1.35ms</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">&gt;&gt;&gt; Clarabel - Results
+Status: <span class="sgr32">SOLVED</span>
+Iterations: 10
+Objective: -1.845
+Solve time: 1.35ms
+</code></pre><pre><code class="language-julia hljs">result.x</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">6-element Vector{Float64}:
+ 1.681751678609719
+ 0.5606741441772675
+ 1.0837805035158516
+ 0.06563333626589565
+ 0.9999999919206469
+ 0.761574584823843</code></pre><hr/><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../example_powcone/">« Problem Description</a><a class="docs-footer-nextpage" href="../../rs/example_powcone/">Rust »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="auto">Automatic (OS)</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.0.1 on <span class="colophon-date" title="Wednesday 20 September 2023 13:14">Wednesday 20 September 2023</span>. Using Julia version 1.7.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
