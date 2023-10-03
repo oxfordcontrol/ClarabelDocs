@@ -33,7 +33,7 @@ pip install maturin
 Then compile the Rust source with PyO3 bindings enabled:
 
 ```
-maturin develop --release --features python
+maturin develop --release 
 ```
 
 To check that Clarabel works within the virtual environment, you can then run
