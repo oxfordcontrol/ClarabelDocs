@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Julia · Clarabel jl/rs</title><meta name="title" content="Julia · Clarabel jl/rs"/><meta property="og:title" content="Julia · Clarabel jl/rs"/><meta property="twitter:title" content="Julia · Clarabel jl/rs"/><meta name="description" content="Documentation for Clarabel jl/rs."/><meta property="og:description" content="Documentation for Clarabel jl/rs."/><meta property="twitter:description" content="Documentation for Clarabel jl/rs."/><meta property="og:url" content="https://oxfordcontrol.github.io/ClarabelDocs/stable/examples/jl/example_qp/"/><meta property="twitter:url" content="https://oxfordcontrol.github.io/ClarabelDocs/stable/examples/jl/example_qp/"/><link rel="canonical" href="https://oxfordcontrol.github.io/ClarabelDocs/stable/examples/jl/example_qp/"/><script async src="https://www.googletagmanager.com/gtag/js?id=G-FP3WPEJMVX"></script><script>  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FP3WPEJMVX', {'page_path': location.pathname + location.search + location.hash});
+</script><script data-outdated-warner src="../../../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL="../../.."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../../../assets/documenter.js"></script><script src="../../../search_index.js"></script><script src="../../../siteinfo.js"></script><script src="../../../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../../../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../../../assets/themeswap.js"></script><link href="../../../assets/favicon.ico" rel="icon" type="image/x-icon"/><script src="../../../assets/github_buttons.js"></script><link href="../../../assets/custom.css" rel="stylesheet" type="text/css"/></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../../../"><img src="../../../assets/logo.png" alt="Clarabel jl/rs logo"/></a><div class="docs-package-name"><span class="docs-autofit"><a href="../../../">Clarabel jl/rs</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../../../">Home</a></li><li><span class="tocitem">User Guides</span><ul><li><input class="collapse-toggle" id="menuitem-2-1" type="checkbox"/><label class="tocitem" for="menuitem-2-1"><span class="docs-label">Julia</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../../julia/installation_jl/">Installation</a></li><li><a class="tocitem" href="../../../julia/getting_started_jl/">Getting Started</a></li><li><a class="tocitem" href="../../../julia/jump/">JuMP Interface</a></li><li><a class="tocitem" href="../../../literate/build/convex_jl/">Convex.jl Interface</a></li><li><a class="tocitem" href="../../../literate/build/arbitrary_precision/">Arbitrary Precision Arithmetic</a></li><li><a class="tocitem" href="../../../julia/linear_solvers/">Linear Solvers</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-2-2" type="checkbox"/><label class="tocitem" for="menuitem-2-2"><span class="docs-label">Rust</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../../rust/installation_rs/">Installation</a></li><li><a class="tocitem" href="../../../rust/getting_started_rs/">Getting Started</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-2-3" type="checkbox"/><label class="tocitem" for="menuitem-2-3"><span class="docs-label">Python</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../../python/installation_py/">Installation</a></li><li><a class="tocitem" href="../../../python/getting_started_py/">Getting Started</a></li></ul></li><li><a class="tocitem" href="../../../user_guide_c_cpp/">C/C++</a></li><li><a class="tocitem" href="../../../user_guide_r/">R</a></li><li><a class="tocitem" href="../../../user_guide_chordal/">Chordal Decomposition</a></li></ul></li><li><span class="tocitem">Examples</span><ul><li><input class="collapse-toggle" id="menuitem-3-1" type="checkbox" checked/><label class="tocitem" for="menuitem-3-1"><span class="docs-label">Quadratic Program (QP)</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../example_qp/">Problem Description</a></li><li class="is-active"><a class="tocitem" href>Julia</a><ul class="internal"><li><a class="tocitem" href="#Clarabel.jl-native-interface"><span>Clarabel.jl native interface</span></a></li><li><a class="tocitem" href="#Using-JuMP"><span>Using JuMP</span></a></li><li><a class="tocitem" href="#Using-Convex.jl"><span>Using Convex.jl</span></a></li></ul></li><li><a class="tocitem" href="../../rs/example_qp/">Rust</a></li><li><a class="tocitem" href="../../py/example_qp/">Python</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-3-2" type="checkbox"/><label class="tocitem" for="menuitem-3-2"><span class="docs-label">Second-Order Cone Program (SOCP)</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../example_socp/">Problem Description</a></li><li><a class="tocitem" href="../example_socp/">Julia</a></li><li><a class="tocitem" href="../../rs/example_socp/">Rust</a></li><li><a class="tocitem" href="../../py/example_socp/">Python</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-3-3" type="checkbox"/><label class="tocitem" for="menuitem-3-3"><span class="docs-label">Exponential Cone Program</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../example_expcone/">Problem Description</a></li><li><a class="tocitem" href="../example_expcone/">Julia</a></li><li><a class="tocitem" href="../../rs/example_expcone/">Rust</a></li><li><a class="tocitem" href="../../py/example_expcone/">Python</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-3-4" type="checkbox"/><label class="tocitem" for="menuitem-3-4"><span class="docs-label">Power Cone Program</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../example_powcone/">Problem Description</a></li><li><a class="tocitem" href="../example_powcone/">Julia</a></li><li><a class="tocitem" href="../../rs/example_powcone/">Rust</a></li><li><a class="tocitem" href="../../py/example_powcone/">Python</a></li></ul></li><li><input class="collapse-toggle" id="menuitem-3-5" type="checkbox"/><label class="tocitem" for="menuitem-3-5"><span class="docs-label">Semidefinite Program (SDP)</span><i class="docs-chevron"></i></label><ul class="collapsed"><li><a class="tocitem" href="../../example_sdp/">Problem Description</a></li><li><a class="tocitem" href="../example_sdp/">Julia</a></li><li><a class="tocitem" href="../../rs/example_sdp/">Rust</a></li><li><a class="tocitem" href="../../py/example_sdp/">Python</a></li></ul></li></ul></li><li><a class="tocitem" href="../../../citing/">Citing Clarabel</a></li><li><a class="tocitem" href="../../../contributing/">Contributing</a></li><li><span class="tocitem">API Reference</span><ul><li><a class="tocitem" href="../../../api_cone_types/">Supported Cone Types</a></li><li><a class="tocitem" href="../../../api_settings/">Solver Settings</a></li><li><a class="tocitem" href="../../../api_jl/">Julia API</a></li><li><a class="tocitem" href="../../../api_rs/">Rust API ⧉</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">Examples</a></li><li><a class="is-disabled">Quadratic Program (QP)</a></li><li class="is-active"><a href>Julia</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Julia</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/oxfordcontrol/ClarabelDocs" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/oxfordcontrol/ClarabelDocs/blob/main/examples/jl/example_qp.jl" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="Quadratic-Program-(QP)-Example-in-Julia"><a class="docs-heading-anchor" href="#Quadratic-Program-(QP)-Example-in-Julia">Quadratic Program (QP) Example in Julia</a><a id="Quadratic-Program-(QP)-Example-in-Julia-1"></a><a class="docs-heading-anchor-permalink" href="#Quadratic-Program-(QP)-Example-in-Julia" title="Permalink"></a></h1><p>We will show how to solve the Basic QP example problem both natively in Clarabel.jl and also by solving with Clarabel.jl within either JuMP or Convex.jl.</p><h2 id="Clarabel.jl-native-interface"><a class="docs-heading-anchor" href="#Clarabel.jl-native-interface">Clarabel.jl native interface</a><a id="Clarabel.jl-native-interface-1"></a><a class="docs-heading-anchor-permalink" href="#Clarabel.jl-native-interface" title="Permalink"></a></h2><pre><code class="language-julia hljs">using Clarabel, SparseArrays
+
+P = sparse([3. 0.;0. 2.].*2)
+
+q = [-1., -4.]
+
+A = sparse([1. -2.;    #&lt;-- LHS of equality constraint
+            1.  0.;    #&lt;-- LHS of inequality constraint (upper bound)
+            0.  1.;    #&lt;-- LHS of inequality constraint (upper bound)
+           -1.  0.;    #&lt;-- LHS of inequality constraint (lower bound)
+            0. -1.;    #&lt;-- LHS of inequality constraint (lower bound)
+            ])
+
+b = [0.;        #&lt;-- RHS of equality constraint
+     ones(4)]   #&lt;-- RHS of inequality constraints
+
+cones =
+    [Clarabel.ZeroConeT(1),           #&lt;--- for the equality constraint
+     Clarabel.NonnegativeConeT(4)]    #&lt;--- for the inequality constraints
+
+settings = Clarabel.Settings()
+
+solver   = Clarabel.Solver()
+
+Clarabel.setup!(solver, P, q, A, b, cones, settings)
+
+result = Clarabel.solve!(solver)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">-------------------------------------------------------------
+           Clarabel.jl v0.8.0  -  Clever Acronym
+                   (c) Paul Goulart
+                University of Oxford, 2022
+-------------------------------------------------------------
+
+problem:
+  variables     = 2
+  constraints   = 5
+  nnz(P)        = 2
+  nnz(A)        = 6
+  cones (total) = 2
+    : Zero        = 1,  numel = 1
+    : Nonnegative = 1,  numel = 4
+
+settings:
+  linear algebra: direct / qdldl, precision: Float64
+  max iter = 200, time limit = Inf,  max step = 0.990
+  tol_feas = 1.0e-08, tol_gap_abs = 1.0e-08, tol_gap_rel = 1.0e-08,
+  static reg : on, ϵ1 = 1.0e-08, ϵ2 = 4.9e-32
+  dynamic reg: on, ϵ = 1.0e-13, δ = 2.0e-07
+  iter refine: on, reltol = 1.0e-13, abstol = 1.0e-12,
+               max iter = 10, stop ratio = 5.0
+  equilibrate: on, min_scale = 1.0e-04, max_scale = 1.0e+04
+               max iter = 10
+
+iter    pcost        dcost       gap       pres      dres      k/t        μ       step
+---------------------------------------------------------------------------------------------
+  0  -3.2878e-01  -1.8973e+01  1.86e+01  9.76e-17  9.02e-17  1.00e+00  1.77e+00   ------
+  1  -5.7453e-01  -1.8040e+00  1.23e+00  4.81e-17  3.23e-17  6.08e-02  1.15e-01  9.44e-01
+  2  -6.4203e-01  -7.5345e-01  1.11e-01  1.63e-17  3.25e-17  5.21e-03  8.97e-03  9.90e-01
+  3  -6.4286e-01  -6.4541e-01  2.55e-03  1.08e-16  3.26e-17  1.19e-04  2.00e-04  9.90e-01
+  4  -6.4286e-01  -6.4288e-01  2.63e-05  4.89e-17  7.99e-18  1.23e-06  2.06e-06  9.90e-01
+  5  -6.4286e-01  -6.4286e-01  2.63e-07  8.82e-15  1.81e-14  1.23e-08  2.06e-08  9.90e-01
+  6  -6.4286e-01  -6.4286e-01  2.63e-09  2.30e-16  4.02e-16  1.23e-10  2.06e-10  9.90e-01
+---------------------------------------------------------------------------------------------
+Terminated with status = solved
+solve time =  648μs</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">&gt;&gt;&gt; Clarabel - Results
+Status: <span class="sgr32">SOLVED</span>
+Iterations: 6
+Objective: -0.6429
+Solve time:  648μs
+</code></pre><pre><code class="language-julia hljs">result.x</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
+ 0.4285714281988429
+ 0.2142857140994215</code></pre><h2 id="Using-JuMP"><a class="docs-heading-anchor" href="#Using-JuMP">Using JuMP</a><a id="Using-JuMP-1"></a><a class="docs-heading-anchor-permalink" href="#Using-JuMP" title="Permalink"></a></h2><p>We can solve the same problem a little more easily by using Clarabel.jl as the backend solver within <a href="http://www.juliaopt.org/JuMP.jl/stable/">JuMP</a>. Here is the same problem again:</p><pre><code class="language-julia hljs">using Clarabel, JuMP
+
+model = JuMP.Model(Clarabel.Optimizer)
+set_optimizer_attribute(model, &quot;verbose&quot;, true)
+
+@variable(model, x[1:2])
+@constraint(model, x[1] == 2x[2])
+@constraint(model,  -1 .&lt;= x .&lt;= 1)
+@objective(model, Min, 3x[1]^2 + 2x[2]^2 - x[1] - 4x[2])
+
+optimize!(model)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">-------------------------------------------------------------
+           Clarabel.jl v0.8.0  -  Clever Acronym
+                   (c) Paul Goulart
+                University of Oxford, 2022
+-------------------------------------------------------------
+
+problem:
+  variables     = 2
+  constraints   = 5
+  nnz(P)        = 2
+  nnz(A)        = 6
+  cones (total) = 2
+    : Zero        = 1,  numel = 1
+    : Nonnegative = 1,  numel = 4
+
+settings:
+  linear algebra: direct / qdldl, precision: Float64
+  max iter = 200, time limit = Inf,  max step = 0.990
+  tol_feas = 1.0e-08, tol_gap_abs = 1.0e-08, tol_gap_rel = 1.0e-08,
+  static reg : on, ϵ1 = 1.0e-08, ϵ2 = 4.9e-32
+  dynamic reg: on, ϵ = 1.0e-13, δ = 2.0e-07
+  iter refine: on, reltol = 1.0e-13, abstol = 1.0e-12,
+               max iter = 10, stop ratio = 5.0
+  equilibrate: on, min_scale = 1.0e-04, max_scale = 1.0e+04
+               max iter = 10
+
+iter    pcost        dcost       gap       pres      dres      k/t        μ       step
+---------------------------------------------------------------------------------------------
+  0  -3.2878e-01  -1.8973e+01  1.86e+01  9.48e-17  1.50e-16  1.00e+00  1.77e+00   ------
+  1  -5.7453e-01  -1.8040e+00  1.23e+00  4.89e-17  6.32e-17  6.08e-02  1.15e-01  9.44e-01
+  2  -6.4203e-01  -7.5345e-01  1.11e-01  5.91e-17  3.34e-17  5.21e-03  8.97e-03  9.90e-01
+  3  -6.4286e-01  -6.4541e-01  2.55e-03  1.14e-16  0.00e+00  1.19e-04  2.00e-04  9.90e-01
+  4  -6.4286e-01  -6.4288e-01  2.63e-05  4.71e-17  3.20e-17  1.23e-06  2.06e-06  9.90e-01
+  5  -6.4286e-01  -6.4286e-01  2.63e-07  8.82e-15  1.81e-14  1.23e-08  2.06e-08  9.90e-01
+  6  -6.4286e-01  -6.4286e-01  2.63e-09  1.96e-16  3.17e-16  1.23e-10  2.06e-10  9.90e-01
+---------------------------------------------------------------------------------------------
+Terminated with status = solved
+solve time =  602μs</code></pre><p>Here is the solution</p><pre><code class="language-julia hljs">JuMP.value.(x)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
+ 0.4285714281988431
+ 0.21428571409942154</code></pre><p>and the solver termination status again</p><pre><code class="language-julia hljs">JuMP.termination_status(model)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">OPTIMAL::TerminationStatusCode = 1</code></pre><h2 id="Using-Convex.jl"><a class="docs-heading-anchor" href="#Using-Convex.jl">Using Convex.jl</a><a id="Using-Convex.jl-1"></a><a class="docs-heading-anchor-permalink" href="#Using-Convex.jl" title="Permalink"></a></h2><p>We can likewise solve the same problem a using Clarabel.jl as the backend solver within <a href="https://jump.dev/Convex.jl/stable/">Convex.jl</a>.   Here is the same problem one more time:</p><pre><code class="language-julia hljs">using Clarabel, Convex
+
+x = Variable(2)
+problem = minimize(3square(x[1]) + 2square(x[2]) - x[1] - 4x[2])
+problem.constraints = [x[1] == 2x[2]]
+problem.constraints += [x &gt;= -1; x &lt;= 1]
+solve!(problem, Clarabel.Optimizer; silent_solver = false)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">Problem statistics
+  problem is DCP         : true
+  number of variables    : 1 (2 scalar elements)
+  number of constraints  : 3 (5 scalar elements)
+  number of coefficients : 12
+  number of atoms        : 23
+
+Solution summary
+  termination status : OPTIMAL
+  primal status      : FEASIBLE_POINT
+  dual status        : FEASIBLE_POINT
+  objective value    : -0.6429
+
+Expression graph
+  minimize
+   └─ + (convex; real)
+      ├─ * (convex; positive)
+      │  ├─ [3;;]
+      │  └─ qol_elem (convex; positive)
+      │     ├─ …
+      │     └─ …
+      ├─ * (convex; positive)
+      │  ├─ [2;;]
+      │  └─ qol_elem (convex; positive)
+      │     ├─ …
+      │     └─ …
+      ├─ Convex.NegateAtom (affine; real)
+      │  └─ index (affine; real)
+      │     └─ …
+      ⋮
+  subject to
+   ├─ == constraint (affine)
+   │  └─ + (affine; real)
+   │     ├─ index (affine; real)
+   │     │  └─ …
+   │     └─ Convex.NegateAtom (affine; real)
+   │        └─ …
+   ├─ ≥ constraint (affine)
+   │  └─ + (affine; real)
+   │     ├─ 2-element real variable (id: 152…058)
+   │     └─ Convex.NegateAtom (constant; positive)
+   │        └─ …
+   └─ ≤ constraint (affine)
+      └─ + (affine; real)
+         ├─ 2-element real variable (id: 152…058)
+         └─ Convex.NegateAtom (constant; negative)
+            └─ …
+</code></pre><p>Here is our solution</p><pre><code class="language-julia hljs">evaluate(x)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">2-element Vector{Float64}:
+ 0.4285731865024157
+ 0.21428659325133423</code></pre><p>and the solver termination status again</p><pre><code class="language-julia hljs">problem.status</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">OPTIMAL::TerminationStatusCode = 1</code></pre><div class="admonition is-warning"><header class="admonition-header">Warning</header><div class="admonition-body"><p>Note that in the Clarabel.jl output that follows the call to solve! using Convex.jl, the problem posed to the solver has been converted to a second-order cone program with a linear objective.   You can see this because now <code>nnz(P) == 0</code> (there is no quadratic term in the objective) and the solver reports two second order cone constraints.</p><p>Although the solution will be the same, the required number of iterations and solve time are slightly higher.  When solving problems with quadratic objectives in Clarabel.jl, it is generally preferable to use either the  native Clarabel.jl interface or JuMP, both of which handle quadratic terms in the objective directly.</p></div></div><hr/><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../../example_qp/">« Problem Description</a><a class="docs-footer-nextpage" href="../../rs/example_qp/">Rust »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.4.1 on <span class="colophon-date" title="Wednesday 22 May 2024 06:04">Wednesday 22 May 2024</span>. Using Julia version 1.7.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
