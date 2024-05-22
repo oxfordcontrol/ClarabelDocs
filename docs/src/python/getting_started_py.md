@@ -107,7 +107,7 @@ settings = clarabel.DefaultSettings()
 If you want to disable verbose printing and set a 5 second time limit on the solver, you can then just modify the fields:
 
 ```python
-settings.verbose = True
+settings.verbose = False
 settings.time_limit = 5.
 ```
 
