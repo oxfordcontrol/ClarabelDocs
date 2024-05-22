@@ -14,13 +14,12 @@ Symbol | Package | Description
 ---  | :--- | :---
 :qdldl | [QDLDL.jl](https://github.com/osqp/QDLDL.jl)   | Default solver
 :mkl   | [Pardiso.jl](https://github.com/JuliaSparse/Pardiso.jl) | Intel MKL Pardiso
+:panua | [Pardiso.jl](https://github.com/JuliaSparse/Pardiso.jl) | Panua Pardiso
+:ma57 | [HSL.jl](https://github.com/JuliaSmoothOptimizers/HSL.jl) | HSL MA57
 :cholmod | Julia native [ldlt](https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#LinearAlgebra.ldlt) solver | SuiteSparse.CHOLMOD
 
 !!! note
-    To use the MKL Pardiso solver you must install the respective libraries and the corresponding Julia wrapper. For more information about installing these, visit the [Pardiso.jl](https://github.com/JuliaSparse/Pardiso.jl) repository page.   You must 
-    also bring Pardiso into scope first (i.e. `using Pardiso`) before Clarabel.
+    To use the Pardiso solvers you must install the respective libraries and the corresponding Julia wrapper. For more information about installing these, visit the [Pardiso.jl](https://github.com/JuliaSparse/Pardiso.jl) repository page.   You must also bring Pardiso into scope first (i.e. `using Pardiso`) before solving.
+    The same is true for the HSL MA57 solver, which requires the HSL library and the Julia wrapper [HSL.jl].
 
-
-QDLDL is a single threaded solver written in pure Julia, and is generally adequate for problems of small to medium size.   The MKL Pardiso solver is multi-threaded and may be preferred for very large problem instances, or problems in which the problem data is extremely dense.
-
-Support for additional linear system solvers may be implemented in future releases.   
+QDLDL is a single threaded solver written in pure Julia, and is generally adequate for problems of small to medium size.  

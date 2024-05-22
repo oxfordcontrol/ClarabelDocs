@@ -1,6 +1,8 @@
 # Getting Started
 
-This section describes the process of creating a Clarabel.rs model, populating its settings and problem data, solving the problem and obtaining and understanding results.   It is assumed here that you are building your project using `cargo`.
+This section describes the process of creating a Clarabel.rs model, populating its settings and problem data, solving the problem and obtaining and understanding results.  It is assumed here that you are building your project using `cargo`.
+
+Full documentation for the Rust API is available in the [API Reference](@ref api-ref-rust).
 
 The first step is to make the Clarabel solver a dependency in your project by adding:
 
@@ -158,22 +160,30 @@ solver.solve();
 
 ## Results
 
-Once the solver algorithm terminates you can inspect the solution using the `solution` field of the solver.   The primal solution will be in `solution.x` and the dual solution in `solution.z`, e.g.
+Once the solver algorithm terminates you can inspect the solution using the `solution` field of the solver.  
 
 ```rust
-println!("Solution = {:?}", solver.solution.x);
+println!("Solution status = {:?}", solver.solution.status);
+println!("Primal solution = {:?}", solver.solution.x);
+println!("Dual solution   = {:?}", solver.solution.z);
+println!("Primal slacks   = {:?}", solver.solution.s);
 ```
 
 The outcome of the solve is specified in `solver.solution.status` and will be one of the following :
 
 Status Code  | Description
 ---  | :---
-Unsolved           |  Default value, only occurs prior to calling `solve`
-Solved             |  Solution found
-PrimalInfeasible   |  Problem is primal infeasible
-DualInfeasible     |  Problem is dual infeasible
-MaxIterations      |  Solver halted after reaching iteration limit
-MaxTime            |  Solver halted after reaching time limit
+Unsolved               |  Default value, only occurs prior to calling `solve`
+Solved                 |  Solution found
+PrimalInfeasible       |  Problem is primal infeasible
+DualInfeasible         |  Problem is dual infeasible
+AlmostSolved           |  Solution found (reduced accuracy)
+AlmostPrimalInfeasible |  Problem is primal infeasible (reduced accuracy)
+AlmostDualInfeasible   |  Problem is dual infeasible (reduced accuracy)
+MaxIterations          |  Solver halted after reaching iteration limit
+MaxTime                |  Solver halted after reaching time limit
+NumericalError         |  Solver terminated with a numerical error
+InsufficientProgress   |  Solver terminated due to lack of progress
 
 The total solution time is available in `solver.solution.solve_time`.  
 

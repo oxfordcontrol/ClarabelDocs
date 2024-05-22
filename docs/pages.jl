@@ -52,6 +52,7 @@ pages = [
           ],
           "C/C++" => "user_guide_c_cpp.md",
           "R" => "user_guide_r.md",
+          "Chordal Decomposition" => "user_guide_chordal.md",
       ],
       #"Method" => "method.md",
       "Examples" => examples,

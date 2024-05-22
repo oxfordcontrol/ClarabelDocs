@@ -46,6 +46,7 @@ Documenter.md_include(
   plaintext = true)
 ````
 
+
 We can then define our constraint data as
 
 ```julia
@@ -125,11 +126,14 @@ This takes an internal copy of all data parameters and initializes internal vari
 Now you can solve your problem using:
 ```julia
 solution = Clarabel.solve!(solver)
+solution.x   # primal solution
+solution.z   # dual solution
+solution.s   # slacks
 ```
 
 ## Results
 
-Once the solver algorithm terminates you can inspect the solution using the `solution` object.   The primal solution will be in `solution.x` and the dual solution in `solution.z`. The outcome of the solve is specified in `solution.status` and will be one of the following :
+Once the solver algorithm terminates you can inspect the solution using the `solution` object.  The outcome of the solve is specified in `solution.status` and will be one of the following :
 
 ### Status Codes
 

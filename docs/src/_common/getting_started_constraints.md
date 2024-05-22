@@ -1,4 +1,4 @@
-The Clarabel interface expects constraints to be presented in the single vectorized form ``Ax + s = b, s \in \mathcal{K}``, where ``\mathcal{K} = \mathcal{K}_1 \times \dots \times \mathcal{K}_p`` and each ``\mathcal{K}_i`` is one of the solver's [supported cone types](@ref api-cone-types).
+The Clarabel interface expects constraints to be presented in the single vectorized form ``Ax + s = b, s \in \mathcal{K}``, where ``\mathcal{K} = \mathcal{K}_1 \times \dots \times \mathcal{K}_p`` and each ``\mathcal{K}_i`` is one of the solver's supported cone types.
 
 
 

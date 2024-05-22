@@ -121,19 +121,28 @@ Finally, populate the solver with problem data and solve:
 solver = clarabel.DefaultSolver(P,q,A,b,cones,settings)
 
 solution = solver.solve()
+solution.x  # primal solution
+solution.z  # dual solution
+solution.s  # primal slacks
 ```
 
 ## Results
 
-Once the solver algorithm terminates you can inspect the solution using the `solution` output.   The primal solution will be in `solution.x` and the dual solution in `solution.z`.  The outcome of the solve is specified in `solution.status` and will be one of the following :
+The outcome of the solve is specified in `solver.solution.status` and will be one of the following :
 
 Status Code  | Description
 ---  | :---
-Solved             |  Solution found
-PrimalInfeasible   |  Problem is primal infeasible
-DualInfeasible     |  Problem is dual infeasible
-MaxIterations      |  Solver halted after reaching iteration limit
-MaxTime            |  Solver halted after reaching time limit
+Unsolved               |  Default value, only occurs prior to calling `solve`
+Solved                 |  Solution found
+PrimalInfeasible       |  Problem is primal infeasible
+DualInfeasible         |  Problem is dual infeasible
+AlmostSolved           |  Solution found (reduced accuracy)
+AlmostPrimalInfeasible |  Problem is primal infeasible (reduced accuracy)
+AlmostDualInfeasible   |  Problem is dual infeasible (reduced accuracy)
+MaxIterations          |  Solver halted after reaching iteration limit
+MaxTime                |  Solver halted after reaching time limit
+NumericalError         |  Solver terminated with a numerical error
+InsufficientProgress   |  Solver terminated due to lack of progress
 
 The total solution time is available in `solution.solve_time`.  
 

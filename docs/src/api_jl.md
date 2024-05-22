@@ -8,7 +8,7 @@ Clarabel.setup!
 Clarabel.solve!
 ```
 
-## [Supported Cone Types](@id api-cones)
+## [SupportedCone](@id api-cones)
 
 ```@docs
 Clarabel.SupportedCone
