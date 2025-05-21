@@ -30,4 +30,4 @@ objective = 3square(x[1]) + 2square(x[2]) - x[1] - 4x[2]
 problem = minimize(objective; numeric_type = BigFloat)
 problem.constraints = [x[1] == 2x[2]]
 problem.constraints += [x >= -1; x <= 1]
-solve!(problem, Clarabel.Optimizer{BigFloat}; silent_solver = false)
+solve!(problem, Clarabel.Optimizer{BigFloat}; silent = false)

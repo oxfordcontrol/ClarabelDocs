@@ -74,7 +74,7 @@ using Clarabel, Convex
 x = Variable(2)
 problem = minimize(square(x[2]))
 problem.constraints = [norm([2x[1];x[2]] - [2;2], 2) <= 1]
-solve!(problem, Clarabel.Optimizer; silent_solver = false)
+solve!(problem, Clarabel.Optimizer; silent = false)
 
 # Here is our solution
 

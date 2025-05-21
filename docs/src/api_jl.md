@@ -6,6 +6,8 @@
 Clarabel.Solver
 Clarabel.setup!
 Clarabel.solve!
+Clarabel.save_to_file
+Clarabel.load_from_file
 ```
 
 ## [SupportedCone](@id api-cones)
