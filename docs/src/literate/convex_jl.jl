@@ -22,12 +22,15 @@ Clarabel.jl supports arbitrary precision arithmetic for Convex.jl.   Here is the
 
 =#
 
-#hide setprecision(BigFloat,256)
+setprecision(BigFloat,256) #hide 
 using Clarabel, Convex
 
 x = Variable(2)
 objective = 3square(x[1]) + 2square(x[2]) - x[1] - 4x[2]
 problem = minimize(objective; numeric_type = BigFloat)
-problem.constraints = [x[1] == 2x[2]]
-problem.constraints += [x >= -1; x <= 1]
-solve!(problem, Clarabel.Optimizer{BigFloat}; silent = false)
+problem.constraints =  [
+    x[1] == 2x[2];
+    x >= -1; 
+    x <= 1
+]
+solve!(problem, Clarabel.Optimizer{BigFloat}; silent = false);

@@ -6,12 +6,19 @@
 
     using Markdown, Documenter
 
+    function is_url(s::String)
+        url_pattern = r"^https?://[^\s/$.?#].[^\s]*$"i
+        return occursin(url_pattern, s)
+    end
+
     function md_include(;source = Nothing,
                          language = :julia,
                          plaintext = false)
 
-        root   = Documenter.find_root_parent(Documenter.is_git_repo_root,".")
-        source = joinpath(root,source)
+        if !isnothing(source) && !is_url(source)
+            root   = Documenter.find_root_parent(Documenter.is_git_repo_root,".")
+            source = joinpath(root,source)
+        end
 
         @info "md_include importing from:" source
 
@@ -35,3 +42,9 @@
     end #end function
 
 end # end @eval
+
+
+
+
+
+

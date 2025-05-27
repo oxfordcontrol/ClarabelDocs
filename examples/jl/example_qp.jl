@@ -81,9 +81,12 @@ using Clarabel, Convex
 
 x = Variable(2)
 problem = minimize(3square(x[1]) + 2square(x[2]) - x[1] - 4x[2])
-problem.constraints = [x[1] == 2x[2]]
-problem.constraints += [x >= -1; x <= 1]
-solve!(problem, Clarabel.Optimizer; silent = false)
+problem.constraints = [
+     x[1] == 2x[2];
+     x >= -1; 
+     x <= 1
+]
+solve!(problem, Clarabel.Optimizer; silent = false);
 
 # Here is our solution
 

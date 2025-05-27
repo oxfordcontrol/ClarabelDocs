@@ -33,14 +33,13 @@ examples = [
 
 pages = [
       "Home" => "index.md",
-      "User Guides" => Any[
+      "Supported Languages" => Any[
           "Julia" =>  Any[
                 "Installation" => "julia/installation_jl.md",
                 "Getting Started" => "julia/getting_started_jl.md",
                 "JuMP Interface" => "julia/jump.md",
                 "Convex.jl Interface" => "./literate/build/convex_jl.md",
                 "Arbitrary Precision Arithmetic" => "./literate/build/arbitrary_precision.md",
-                "Linear Solvers" => "julia/linear_solvers.md",
           ],
           "Rust" =>  Any[
                 "Installation" => "rust/installation_rs.md",
@@ -52,7 +51,16 @@ pages = [
           ],
           "C/C++" => "user_guide_c_cpp.md",
           "R" => "user_guide_r.md",
+      ],
+      "Solver features" => Any[
+            "Callbacks" => Any[
+            "Termination Callbacks" => "user_guide_callbacks.md",
+            "Rust Example" => "./examples/rs/example_callback.md",
+            "Python Example" => "./examples/py/example_callback.md",
+            ],
           "Chordal Decomposition" => "user_guide_chordal.md",
+          "Problem Data Updates" => "user_guide_data_updating.md",
+          "Linear System Solvers" => "user_guide_linsolvers.md",
       ],
       #"Method" => "method.md",
       "Examples" => examples,
@@ -62,6 +70,7 @@ pages = [
           "Supported Cone Types" => "api_cone_types.md",
           "Solver Settings" => "api_settings.md",
           "Julia API" => "api_jl.md",
-          "Rust API \u29C9" => "api_rs.md"
-    ]
-  ]
+          "Rust API \u29C9" => "api_rs.md",
+      ]
+]
+
