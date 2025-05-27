@@ -76,7 +76,7 @@ The solver's default configuration expects constraints in the form $Ax + s = b$.
 where $\mathcal{K}_{\text{tri}}^n$ is the cone of vectors representing the triangular part of matrices in $\mathbb{S}_+^n$.
 
 
-For the equality constraint can we must be careful to rewrite the inner product on $X$ in a form that is an equivalent linear function of $x$.  We therefore write 
+For the equality constraint we must be careful to rewrite the inner product on $X$ in a form that is an equivalent linear function of $x$.  We therefore write 
 ```math 
 \begin{aligned}
   \langle A,X\rangle &= \textrm{vec}(A)^T\textrm{vec}(X) \\
